@@ -1,0 +1,54 @@
+@use '../../../styles/mixins' as *;
+
+.blogPostPage {
+  height: 100%;
+  padding: 2rem 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-500);
+
+  & .title {
+    margin: var(--spacing-400) auto;
+    text-transform: capitalize;
+  }
+
+  & .image {
+    height: 16rem;
+    width: 16rem;
+    object-fit: cover;
+
+    @include respond(tab) {
+      height: 20rem;
+      width: 32rem;
+    }
+
+    @include respond(laptop) {
+      width: 34rem;
+    }
+
+    @include respond(desktop) {
+      height: 22rem;
+      width: 40rem;
+    }
+  }
+
+  & .subContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-800);
+  }
+  & .date {
+    padding: var(--spacing-100);
+  }
+
+  & .tags {
+    font-size: var(--fs-200);
+    padding: var(--spacing-100);
+  }
+  & .content {
+    padding: var(--spacing-100) var(--spacing-200);
+  }
+}

@@ -1,0 +1,22 @@
+@use '../../../styles/mixins' as *;
+
+.blogPreviewModal {
+    padding: var(--spacing-200);
+    display: flex; 
+    flex-direction: column;
+    gap: var(--spacing-400);
+
+    & .title {
+        text-transform: capitalize;
+    }
+
+    & .image {
+        height: 16rem;
+        width: 16rem;
+        margin: 0 auto;
+    }
+
+    & .description {
+        padding: var(--spacing-200);
+    }
+}

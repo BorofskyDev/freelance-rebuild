@@ -1,5 +1,5 @@
 import styles from './SmallText.module.scss'
 
-export default function SmallText({ children }) {
-  return <p className={`fs-200 ${styles.smallText}`}>{children}</p>
+export default function SmallText({ children, className }) {
+  return <p className={`fs-200 ${styles.smallText} ${className}`}>{children}</p>
 }
