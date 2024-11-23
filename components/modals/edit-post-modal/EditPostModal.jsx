@@ -2,25 +2,15 @@
 
 'use client'
 
-import { Dialog } from '@headlessui/react'
-import { useState, useEffect, useRef } from 'react'
-import { db, storage } from '@/lib/firebase'
-import {
-  doc,
-  getDoc,
-  updateDoc,
-  serverTimestamp,
-  Timestamp,
-} from 'firebase/firestore'
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { useEditPost } from '@/lib/hooks/blog/useEditPost'
+import { handleEditPostSubmit } from '@/lib/functions/blog/handleEditPostSubmit'
 import InputGroup from '@/components/inputs/input-group/InputGroup'
 import TagSelector from '@/components/inputs/tag-selector/TagSelector'
 import dynamic from 'next/dynamic'
 import 'highlight.js/styles/github.css' // Import Highlight.js styles
-import { toast } from 'react-toastify'
 import { useTags } from '@/lib/hooks/blog/useTags'
 import Image from 'next/image'
-import imageCompression from 'browser-image-compression'
 import styles from './EditPostModal.module.scss'
 
 const Editor = dynamic(
@@ -32,120 +22,38 @@ const Editor = dynamic(
 )
 
 export default function EditPostModal({ postId, onClose }) {
-  const [post, setPost] = useState(null)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [successMessage, setSuccessMessage] = useState('')
+  const {
+    post,
+    title,
+    setTitle,
+    slug,
+    setSlug,
+    imageURL,
+    setImageURL,
+    imageFile,
+    setImageFile,
+    imagePreview,
+    setImagePreview,
+    description,
+    setDescription,
+    content,
+    setContent,
+    selectedTags,
+    setSelectedTags,
+    published,
+    setPublished,
+    publishDate,
+    setPublishDate,
+    errors,
+    setErrors,
+    isSubmitting,
+    setIsSubmitting,
+    successMessage,
+    setSuccessMessage,
+    editorRef,
+  } = useEditPost(postId, onClose)
 
   const { availableTags, loadingTags, creatingTag, createTag } = useTags()
-
-  // Define state variables for the form fields
-  const [title, setTitle] = useState('')
-  const [slug, setSlug] = useState('')
-  const [imageURL, setImageURL] = useState('')
-  const [imageFile, setImageFile] = useState(null)
-  const [imagePreview, setImagePreview] = useState(null)
-  const [description, setDescription] = useState('')
-  const [content, setContent] = useState('')
-  const [selectedTags, setSelectedTags] = useState([])
-  const [published, setPublished] = useState(false)
-  const [publishDate, setPublishDate] = useState('')
-  const [errors, setErrors] = useState({})
-
-  const editorRef = useRef(null)
-
-  /**
-   * Fetches the post data and updates state variables.
-   */
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const docRef = doc(db, 'posts', postId)
-        const docSnap = await getDoc(docRef)
-        if (docSnap.exists()) {
-          const fetchedPost = { id: docSnap.id, ...docSnap.data() }
-          setPost(fetchedPost)
-
-          // Update state variables with fetched post data
-          setTitle(fetchedPost.title || '')
-          setSlug(fetchedPost.slug || '')
-          setImageURL(fetchedPost.imageURL || '')
-          setImagePreview(fetchedPost.imageURL || null)
-          setDescription(fetchedPost.description || '')
-          setContent(fetchedPost.content || '')
-          setSelectedTags(fetchedPost.tags || [])
-          setPublished(fetchedPost.published || false)
-          setPublishDate(
-            fetchedPost.publishDate
-              ? fetchedPost.publishDate.toDate().toISOString().substring(0, 16)
-              : ''
-          )
-        } else {
-          toast.error('Post not found.')
-          onClose()
-        }
-      } catch (error) {
-        console.error('Error fetching post:', error)
-        toast.error('Failed to load post. Please try again.')
-        onClose()
-      }
-    }
-
-    fetchPost()
-  }, [postId, onClose])
-
-  /**
-   * TinyMCE editor configuration
-   */
-  const editorConfig = {
-    height: 500,
-    menubar: false,
-    plugins:
-      'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-    toolbar:
-      'undo redo | formatselect | bold italic underline | \
-      alignleft aligncenter alignright alignjustify | \
-      bullist numlist outdent indent | removeformat | code | image | help',
-    toolbar_mode: 'floating',
-    setup: (editor) => {
-      editorRef.current = editor
-      editor.on('init', () => {
-        editor.formatter.register('code-block', {
-          inline: false,
-          block: 'pre',
-          classes: 'hljs',
-        })
-      })
-    },
-    content_style: `
-      body {
-        direction: ltr; /* Enforce left-to-right */
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-      }
-      pre.hljs {
-        background: #f0f0f0;
-        padding: 1em;
-        border-radius: 5px;
-      }
-      code {
-        background-color: #f0f0f0;
-        padding: 2px 4px;
-        border-radius: 4px;
-      }
-      /* Add more custom styles here */
-    `,
-    automatic_uploads: true,
-    images_upload_handler: async (blobInfo, success, failure) => {
-      // Handle image uploads within the editor
-      try {
-        const file = blobInfo.blob()
-        const url = await uploadImage(file)
-        success(url)
-      } catch (error) {
-        failure('Image upload failed.')
-      }
-    },
-  }
 
   /**
    * Handles changes to the title input.
@@ -212,96 +120,54 @@ export default function EditPostModal({ postId, onClose }) {
   }
 
   /**
-   * Handles image uploads.
-   *
-   * @param {File} file - The image file to upload.
-   * @returns {Promise<string>} - The URL of the uploaded image.
+   * TinyMCE editor configuration
    */
-  const uploadImage = async (file) => {
-    // Compress the image before uploading
-    const options = {
-      maxSizeMB: 1,
-      maxWidthOrHeight: 1920,
-      useWebWorker: true,
-    }
-    try {
-      const compressedFile = await imageCompression(file, options)
-      const imageRef = ref(storage, `postImages/${slug}-${compressedFile.name}`)
-      await uploadBytes(imageRef, compressedFile)
-      const uploadedImageURL = await getDownloadURL(imageRef)
-      return uploadedImageURL
-    } catch (error) {
-      console.error('Error uploading image: ', error)
-      toast.error('Failed to upload image. Please try again.')
-      throw error
-    }
-  }
-
-  /**
-   * Handles form submission.
-   *
-   * @param {Event} e - The submit event from the form.
-   */
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setErrors({})
-    setSuccessMessage('')
-
-    // Basic Validation
-    const newErrors = {}
-    if (!title.trim()) newErrors.title = 'Title is required.'
-    if (!description.trim()) newErrors.description = 'Description is required.'
-    else {
-      const wordCount = description
-        .trim()
-        .split(/\s+/)
-        .filter((word) => word).length
-      if (wordCount > 100)
-        newErrors.description = 'Description cannot exceed 100 words.'
-    }
-    if (!content.trim() || content === '<p><br></p>')
-      newErrors.content = 'Content is required.'
-    if (selectedTags.length === 0)
-      newErrors.tags = 'At least one tag is required.'
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors)
-      setIsSubmitting(false)
-      return
-    }
-
-    try {
-      let updatedImageURL = imageURL
-      if (imageFile) {
-        // Upload new image
-        updatedImageURL = await uploadImage(imageFile)
-      }
-
-      const docRef = doc(db, 'posts', postId)
-      await updateDoc(docRef, {
-        title: title.trim(),
-        description: description.trim(),
-        content,
-        tags: selectedTags,
-        imageURL: updatedImageURL,
-        published,
-        updatedAt: serverTimestamp(),
-        publishDate: publishDate
-          ? Timestamp.fromDate(new Date(publishDate))
-          : null,
+  const editorConfig = {
+    height: 500,
+    menubar: false,
+    plugins:
+      'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+    toolbar:
+      'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code | image | help',
+    toolbar_mode: 'floating',
+    setup: (editor) => {
+      editorRef.current = editor
+      editor.on('init', () => {
+        editor.formatter.register('code-block', {
+          inline: false,
+          block: 'pre',
+          classes: 'hljs',
+        })
       })
-
-      setSuccessMessage('Post updated successfully!')
-      toast.success('Post updated successfully!')
-      onClose()
-    } catch (error) {
-      console.error('Error updating post:', error)
-      setErrors({ submit: 'Failed to update post. Please try again.' })
-      toast.error('Failed to update post. Please try again.')
-    } finally {
-      setIsSubmitting(false)
-    }
+    },
+    content_style: `
+      body {
+        direction: ltr; /* Enforce left-to-right */
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+      pre.hljs {
+        background: #f0f0f0;
+        padding: 1em;
+        border-radius: 5px;
+      }
+      code {
+        background-color: #f0f0f0;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+    `,
+    automatic_uploads: true,
+    images_upload_handler: async (blobInfo, success, failure) => {
+      // Handle image uploads within the editor
+      try {
+        const file = blobInfo.blob()
+        const url = await uploadImage(file, slug)
+        success(url)
+      } catch (error) {
+        failure('Image upload failed.')
+      }
+    },
   }
 
   // Optional: Show a loading state while the post is being fetched
@@ -317,19 +183,44 @@ export default function EditPostModal({ postId, onClose }) {
     <Dialog
       open={true}
       onClose={onClose}
-      className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50'
+      className={`${styles.editPostModal}`}
       aria-labelledby='edit-post-title'
     >
-      <Dialog.Panel
-        className={`bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 ${styles.editPostModal}`}
+      <DialogPanel
+        className={`${styles.editPostContainer}`}
       >
-        <Dialog.Title id='edit-post-title' className='text-xl font-bold mb-4'>
+        <DialogTitle id='edit-post-title' className='text-xl font-bold mb-4'>
           Edit Post
-        </Dialog.Title>
+        </DialogTitle>
         {successMessage && (
           <p className={styles.successMessage}>{successMessage}</p>
         )}
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form
+          className={styles.form}
+          onSubmit={(e) =>
+            handleEditPostSubmit(
+              e,
+              postId,
+              {
+                title,
+                description,
+                content,
+                selectedTags,
+                imageFile,
+                imageURL,
+                slug,
+                published,
+                publishDate,
+              },
+              (newState) => {
+                setIsSubmitting(newState.isSubmitting)
+                setErrors(newState.errors || {})
+                setSuccessMessage(newState.successMessage || '')
+              },
+              onClose
+            )
+          }
+        >
           {/* Title Input */}
           <InputGroup
             label='Post Title'
@@ -478,7 +369,7 @@ export default function EditPostModal({ postId, onClose }) {
             </span>
           )}
         </form>
-      </Dialog.Panel>
+      </DialogPanel>
     </Dialog>
   )
 }

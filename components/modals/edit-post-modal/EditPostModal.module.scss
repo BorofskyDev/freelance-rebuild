@@ -1,8 +1,21 @@
 .editPostModal {
-    width: 40rem;
+    // width: 40rem;
     position: absolute;
+    height: 100%;
+    width: 100%;
     top: 50%;
     left: 50%;
+    overflow: auto;
     transform: translate(-50%, -50%);
-    background-color: hsl(var(--color-violet))
+    background-color: hsl(var(--color-violet));
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+    padding: 2rem;
+
+    & .editPostContainer {
+        margin-top: 10rem;
+        padding: 8rem;
+        height: 100%;
+    }
 }

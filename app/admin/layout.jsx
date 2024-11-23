@@ -5,7 +5,9 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/hooks/auth/useAuth' // Adjust the path if necessary
-
+import PageHeader from '@/components/typography/headers/page-header/PageHeader'
+import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
+import styles from './layout.module.scss'
 export default function AdminLayout({ children }) {
   const router = useRouter()
   const { isAdmin, loading } = useAuth()
@@ -34,7 +36,10 @@ export default function AdminLayout({ children }) {
   }
 
   return (
-    <div >
+    <div className={`bg-blue ${styles.layout}`}>
+      <PageHeader>Admin Page!</PageHeader>
+      <InternalLinkBox href='/admin'>Admin Dashboard</InternalLinkBox>
+
       {/* Optional: Add admin-specific layout components like a sidebar or header */}
       {children}
     </div>

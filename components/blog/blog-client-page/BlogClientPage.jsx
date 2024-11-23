@@ -13,6 +13,7 @@ export default function BlogClientPage({ posts }) {
   const [selectedPostId, setSelectedPostId] = useState(null)
 
   const handleEditClick = (postId) => {
+    console.log('Opening EditPostModal with postId:', postId)
     setSelectedPostId(postId)
   }
 
