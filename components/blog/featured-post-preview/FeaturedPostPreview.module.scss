@@ -11,9 +11,15 @@
   gap: var(--spacing-600);
 
   & img {
-    width: 100%;
-    height: auto;
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
     border-radius: var(--br-400);
+
+    @include respond(laptop) {
+      width: 20rem;
+      
+    }
   }
 
   & .content {
