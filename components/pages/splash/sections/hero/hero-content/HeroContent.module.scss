@@ -1,0 +1,19 @@
+@use '../../../../../../styles/mixins' as *;
+
+.heroContent {
+  margin-top: 1em;
+  padding: 4em 2em;
+  border-bottom: var(--border-200);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1em;
+
+  @include colToRowContainer;
+
+  @include respond(laptop) {
+    border-right: var(--border-200);
+    border-bottom: none;
+  }
+}

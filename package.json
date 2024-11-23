@@ -1,0 +1,33 @@
+{
+  "name": "freelance-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.1.5",
+    "@tinymce/tinymce-react": "^5.1.1",
+    "browser-image-compression": "^2.0.2",
+    "date-fns": "^4.1.0",
+    "firebase": "^11.0.1",
+    "firebase-admin": "^13.0.0",
+    "framer-motion": "^11.11.11",
+    "highlight.js": "^11.10.0",
+    "lodash.debounce": "^4.0.8",
+    "next": "15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-quill": "^2.0.0",
+    "react-toastify": "^10.0.6",
+    "sass": "^1.80.6"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3"
+  }
+}
