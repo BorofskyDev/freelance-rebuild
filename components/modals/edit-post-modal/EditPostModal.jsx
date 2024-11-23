@@ -2,7 +2,7 @@
 
 'use client'
 
-import styles from './EditPostModal.module.scss'
+import { Dialog } from '@headlessui/react'
 import { useState, useEffect, useRef } from 'react'
 import { db, storage } from '@/lib/firebase'
 import {
@@ -21,6 +21,7 @@ import { toast } from 'react-toastify'
 import { useTags } from '@/lib/hooks/blog/useTags'
 import Image from 'next/image'
 import imageCompression from 'browser-image-compression'
+import styles from './EditPostModal.module.scss'
 
 const Editor = dynamic(
   () => import('@tinymce/tinymce-react').then((mod) => mod.Editor),
@@ -313,165 +314,171 @@ export default function EditPostModal({ postId, onClose }) {
   }
 
   return (
-    <div
-      className={styles.editPostModal}
-      role='dialog'
-      aria-modal='true'
+    <Dialog
+      open={true}
+      onClose={onClose}
+      className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50'
       aria-labelledby='edit-post-title'
     >
-      <h2 id='edit-post-title'>Edit Post</h2>
-      {successMessage && (
-        <p className={styles.successMessage}>{successMessage}</p>
-      )}
-      <form className={styles.form} onSubmit={handleSubmit}>
-        {/* Title Input */}
-        <InputGroup
-          label='Post Title'
-          id='title'
-          type='text'
-          value={title}
-          onChange={handleTitleChange}
-          placeholder='Enter post title'
-          required
-          error={errors.title}
-          helperText='Enter a descriptive title for your post.'
-        />
-
-        {/* Slug Display */}
-        <InputGroup
-          label='Post Slug'
-          id='slug'
-          type='text'
-          value={slug}
-          readOnly
-          placeholder='Slug'
-          helperText='The slug used in the post URL.'
-        />
-
-        {/* Image Upload */}
-        <InputGroup
-          label='Post Image'
-          id='image'
-          type='file'
-          accept='image/*'
-          onChange={handleImageChange}
-          error={errors.image}
-          helperText='Upload an image related to your post.'
-        />
-
-        {/* Image Preview */}
-        {imagePreview && (
-          <div className={styles.imagePreview}>
-            <Image
-              src={imagePreview}
-              alt='Image Preview'
-              width={800}
-              height={600}
-              unoptimized
-            />
-          </div>
+      <Dialog.Panel
+        className={`bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 ${styles.editPostModal}`}
+      >
+        <Dialog.Title id='edit-post-title' className='text-xl font-bold mb-4'>
+          Edit Post
+        </Dialog.Title>
+        {successMessage && (
+          <p className={styles.successMessage}>{successMessage}</p>
         )}
-
-        {/* Post Description */}
-        <InputGroup
-          label='Post Description'
-          id='description'
-          isTextarea={true}
-          value={description}
-          onChange={handleDescriptionChange}
-          placeholder='Enter a brief description (max 100 words)'
-          required
-          error={errors.description}
-          helperText='Provide a concise description of your post (up to 100 words).'
-        />
-
-        {/* Tag Selector */}
-        <TagSelector
-          availableTags={availableTags}
-          loadingTags={loadingTags}
-          creatingTag={creatingTag}
-          createTag={createTag}
-          selectedTags={selectedTags}
-          setSelectedTags={setSelectedTags}
-          error={errors.tags}
-        />
-
-        {/* TinyMCE Rich Text Editor for Content */}
-        <div className={styles.inputGroup}>
-          <label
-            htmlFor='content'
-            className={`border-1 bs-3 br-4 fw-bold bg-light fs-200 ${styles.label}`}
-          >
-            Post Content <span aria-hidden='true'>*</span>
-          </label>
-          <Editor
-            apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY}
-            value={content}
-            onEditorChange={handleContentChange}
-            init={editorConfig}
-            className={`${styles.richText} ${
-              errors.content ? styles.errorInput : ''
-            }`}
-            aria-required='true'
-            aria-invalid={!!errors.content}
-            aria-describedby={errors.content ? 'content-error' : undefined}
+        <form className={styles.form} onSubmit={handleSubmit}>
+          {/* Title Input */}
+          <InputGroup
+            label='Post Title'
+            id='title'
+            type='text'
+            value={title}
+            onChange={handleTitleChange}
+            placeholder='Enter post title'
+            required
+            error={errors.title}
+            helperText='Enter a descriptive title for your post.'
           />
-          {errors.content && (
-            <span id='content-error' className={styles.error} role='alert'>
-              {errors.content}
+
+          {/* Slug Display */}
+          <InputGroup
+            label='Post Slug'
+            id='slug'
+            type='text'
+            value={slug}
+            readOnly
+            placeholder='Slug'
+            helperText='The slug used in the post URL.'
+          />
+
+          {/* Image Upload */}
+          <InputGroup
+            label='Post Image'
+            id='image'
+            type='file'
+            accept='image/*'
+            onChange={handleImageChange}
+            error={errors.image}
+            helperText='Upload an image related to your post.'
+          />
+
+          {/* Image Preview */}
+          {imagePreview && (
+            <div className={styles.imagePreview}>
+              <Image
+                src={imagePreview}
+                alt='Image Preview'
+                width={800}
+                height={600}
+                unoptimized
+              />
+            </div>
+          )}
+
+          {/* Post Description */}
+          <InputGroup
+            label='Post Description'
+            id='description'
+            isTextarea={true}
+            value={description}
+            onChange={handleDescriptionChange}
+            placeholder='Enter a brief description (max 100 words)'
+            required
+            error={errors.description}
+            helperText='Provide a concise description of your post (up to 100 words).'
+          />
+
+          {/* Tag Selector */}
+          <TagSelector
+            availableTags={availableTags}
+            loadingTags={loadingTags}
+            creatingTag={creatingTag}
+            createTag={createTag}
+            selectedTags={selectedTags}
+            setSelectedTags={setSelectedTags}
+            error={errors.tags}
+          />
+
+          {/* TinyMCE Rich Text Editor for Content */}
+          <div className={styles.inputGroup}>
+            <label
+              htmlFor='content'
+              className={`border-1 bs-3 br-4 fw-bold bg-light fs-200 ${styles.label}`}
+            >
+              Post Content <span aria-hidden='true'>*</span>
+            </label>
+            <Editor
+              apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY}
+              value={content}
+              onEditorChange={handleContentChange}
+              init={editorConfig}
+              className={`${styles.richText} ${
+                errors.content ? styles.errorInput : ''
+              }`}
+              aria-required='true'
+              aria-invalid={!!errors.content}
+              aria-describedby={errors.content ? 'content-error' : undefined}
+            />
+            {errors.content && (
+              <span id='content-error' className={styles.error} role='alert'>
+                {errors.content}
+              </span>
+            )}
+          </div>
+
+          {/* Published Checkbox */}
+          <div className={styles.inputGroup}>
+            <label htmlFor='published' className={styles.label}>
+              <input
+                type='checkbox'
+                id='published'
+                checked={published}
+                onChange={(e) => setPublished(e.target.checked)}
+              />{' '}
+              Published
+            </label>
+          </div>
+
+          {/* Publish Date */}
+          {published && (
+            <InputGroup
+              label='Publish Date'
+              id='publishDate'
+              type='datetime-local'
+              value={publishDate}
+              onChange={(e) => setPublishDate(e.target.value)}
+              error={errors.publishDate}
+              helperText='Select a future date to schedule the post.'
+            />
+          )}
+
+          {/* Submit and Cancel Buttons */}
+          <div className={styles.buttonGroup}>
+            <button
+              type='submit'
+              className={`bg-blue border-200 br-800 ${styles.submitButton}`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Updating...' : 'Update Post'}
+            </button>
+            <button
+              type='button'
+              className={`ml-4 ${styles.cancelButton}`}
+              onClick={onClose}
+            >
+              Cancel
+            </button>
+          </div>
+          {errors.submit && (
+            <span className={styles.error} role='alert'>
+              {errors.submit}
             </span>
           )}
-        </div>
-
-        {/* Published Checkbox */}
-        <div className={styles.inputGroup}>
-          <label htmlFor='published' className={styles.label}>
-            <input
-              type='checkbox'
-              id='published'
-              checked={published}
-              onChange={(e) => setPublished(e.target.checked)}
-            />{' '}
-            Published
-          </label>
-        </div>
-
-        {/* Publish Date */}
-        {published && (
-          <InputGroup
-            label='Publish Date'
-            id='publishDate'
-            type='datetime-local'
-            value={publishDate}
-            onChange={(e) => setPublishDate(e.target.value)}
-            error={errors.publishDate}
-            helperText='Select a future date to schedule the post.'
-          />
-        )}
-
-        {/* Submit and Cancel Buttons */}
-        <div className={styles.buttonGroup}>
-          <button
-            type='submit'
-            className={`bg-blue border-200 br-800 ${styles.submitButton}`}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Updating...' : 'Update Post'}
-          </button>
-          <button
-            type='button'
-            className={`ml-4 ${styles.cancelButton}`}
-            onClick={onClose}
-          >
-            Cancel
-          </button>
-        </div>
-        {errors.submit && (
-          <span className={styles.error} role='alert'>
-            {errors.submit}
-          </span>
-        )}
-      </form>
-    </div>
+        </form>
+      </Dialog.Panel>
+    </Dialog>
   )
 }

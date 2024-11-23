@@ -1,26 +1,21 @@
-import PostsTable from "@/components/blog/posts-table/PostsTable";
-import ModalButton from "@/components/buttons/modal-button/ModalButton";
-import CreatePostModal from "@/components/modals/create-post-modal/CreatePostModal";
-import MediumHeader from "@/components/typography/headers/medium-header/Mediumheader";
-import styles from './page.module.scss'
+// pages/blog/page.jsx
+import { dbAdmin } from '@/lib/firebaseAdmin'
+import BlogClientPage from '@/components/blog/blog-client-page/BlogClientPage'
 
-export default function BlogPage() {
-    return (
-      <section className={styles.blogPage}>
-        <MediumHeader className='bg-pink'>Blog Functions</MediumHeader>
-        <ul className={styles.functionsList}>
-          <li>
-            <ModalButton
-              className='bg-green'
-              modalContent={<CreatePostModal />}
-            >
-              Create New Blog Post
-            </ModalButton>
-          </li>
-          <li>
-            <PostsTable />
-          </li>
-        </ul>
-      </section>
-    )
+export default async function BlogPage() {
+  // Fetch posts server-side
+  const postsSnapshot = await dbAdmin
+    .collection('posts')
+    .orderBy('createdAt', 'desc')
+    .get()
+
+  const posts = postsSnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+    createdAt: doc.data().createdAt?.toDate().toISOString() || null,
+    updatedAt: doc.data().updatedAt?.toDate().toISOString() || null,
+    publishDate: doc.data().publishDate?.toDate().toISOString() || null,
+  }))
+
+  return <BlogClientPage posts={posts} />
 }
