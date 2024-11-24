@@ -67,6 +67,15 @@ export function Prices() {
         Having faced the confusion of quotes, I do all that I can to be honest
         and fair in my evaluations. Honesty is my guarantee.{' '}
       </p>
+      <br />
+      <br />
+      <p className='border-2 br-5 bs-2'>
+        So if you need a quote, feel free to reach out to me! Depending on what
+        you need it could be as little as $50 or as much as $50,000 or even
+        more! But no matter what, you are going to get exactly what you want out
+        of the build and, most importantly, you will get your money&apos;s
+        worth; I am not an expense, I&apos;m an investment.
+      </p>
     </SmallServiceContainer>
   )
 }

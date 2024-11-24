@@ -7,6 +7,7 @@ import {
   WebDevelopment,
   BusinessDev,
   Prices,
+  HowItWorks,
 } from '@/components/pages/services'
 import styles from './page.module.scss'
 
@@ -50,6 +51,15 @@ export default function ServicesPage() {
           className='fill-vibrant-purple bg-yellow'
           modalContent={<Prices />}
           modalBg='bg-yellow'
+        />
+        <IconModalButton
+          label='How It Works'
+          icon={icons.work.path}
+          viewBox={icons.work.viewBox}
+          xmlns={icons.work.xmlns}
+          className='fill-vibrant-blue bg-orange'
+          modalContent={<HowItWorks />}
+          modalBg='bg-orange'
         />
       </ModalLinkContainer>
     </section>
