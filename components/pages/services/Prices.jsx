@@ -74,7 +74,7 @@ export function Prices() {
         you need it could be as little as $50 or as much as $50,000 or even
         more! But no matter what, you are going to get exactly what you want out
         of the build and, most importantly, you will get your money&apos;s
-        worth; I am not an expense, I&apos;m an investment.
+        worth; I&apos;m not an expense, I&apos;m an investment.
       </p>
     </SmallServiceContainer>
   )
