@@ -91,12 +91,7 @@ export default function StackSection() {
         <ExternalButtonLink className='bg-pink' href='https://www.framer.com/motion/'>
           Framer Motion
         </ExternalButtonLink>
-        <ExternalButtonLink
-          className='bg-orange'
-          href='https://firebase.google.com/'
-        >
-          Firebase
-        </ExternalButtonLink>
+       
         <InternalLinkBox className={styles.exBtn} href='/stack'>Learn more about my stack!</InternalLinkBox>
       </FourSquareBox>
     </FourSquareSectionContainer>
