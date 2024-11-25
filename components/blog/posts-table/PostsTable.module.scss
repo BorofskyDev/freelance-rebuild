@@ -1,0 +1,11 @@
+.postsTable {
+    height: 100%;
+    padding: var(--spacing-400);
+    
+
+   & .table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 var(--spacing-200);
+   }
+}

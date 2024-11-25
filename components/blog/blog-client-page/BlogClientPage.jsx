@@ -1,12 +1,13 @@
 // components/blog/BlogClientPage.jsx
-'use client'
+
+'use client' // Ensure this is a client component
 
 import { useState } from 'react'
 import PostsTable from '@/components/blog/posts-table/PostsTable'
 import ModalButton from '@/components/buttons/modal-button/ModalButton'
 import CreatePostModal from '@/components/modals/create-post-modal/CreatePostModal'
 import EditPostModal from '@/components/modals/edit-post-modal/EditPostModal'
-import MediumHeader from '@/components/typography/headers/medium-header/Mediumheader'
+import MediumHeader from '@/components/typography/headers/medium-header/MediumHeader'
 import styles from './BlogClientPage.module.scss'
 
 export default function BlogClientPage({ posts }) {

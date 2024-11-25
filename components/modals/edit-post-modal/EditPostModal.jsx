@@ -2,7 +2,6 @@
 
 'use client'
 
-import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { useEditPost } from '@/lib/hooks/blog/useEditPost'
 import { handleEditPostSubmit } from '@/lib/functions/blog/handleEditPostSubmit'
 import InputGroup from '@/components/inputs/input-group/InputGroup'
@@ -11,6 +10,7 @@ import dynamic from 'next/dynamic'
 import 'highlight.js/styles/github.css' // Import Highlight.js styles
 import { useTags } from '@/lib/hooks/blog/useTags'
 import Image from 'next/image'
+import Modal from '@/components/modals/Modal' // Import your custom Modal component
 import styles from './EditPostModal.module.scss'
 
 const Editor = dynamic(
@@ -22,6 +22,8 @@ const Editor = dynamic(
 )
 
 export default function EditPostModal({ postId, onClose }) {
+  console.log('EditPostModal Rendered with postId:', postId)
+
   const {
     post,
     title,
@@ -63,6 +65,7 @@ export default function EditPostModal({ postId, onClose }) {
   const handleTitleChange = (e) => {
     setTitle(e.target.value)
     // Optionally, update the slug here if you want to allow slug changes
+    setSlug(e.target.value.toLowerCase().replace(/\s+/g, '-'))
   }
 
   /**
@@ -173,25 +176,18 @@ export default function EditPostModal({ postId, onClose }) {
   // Optional: Show a loading state while the post is being fetched
   if (!post) {
     return (
-      <div className={styles.editPostModal} role='dialog' aria-modal='true'>
-        <p>Loading...</p>
-      </div>
+      <Modal isOpen={true} onClose={onClose}>
+        <div className={styles.editPostModal} role='dialog' aria-modal='true'>
+          <p>Loading...</p>
+        </div>
+      </Modal>
     )
   }
 
   return (
-    <Dialog
-      open={true}
-      onClose={onClose}
-      className={`${styles.editPostModal}`}
-      aria-labelledby='edit-post-title'
-    >
-      <DialogPanel
-        className={`${styles.editPostContainer}`}
-      >
-        <DialogTitle id='edit-post-title' className='text-xl font-bold mb-4'>
-          Edit Post
-        </DialogTitle>
+    <Modal isOpen={true} onClose={onClose}>
+      <div className={styles.editPostModal} role='dialog' aria-modal='true'>
+        <h2 className='text-xl font-bold mb-4'>Edit Post</h2>
         {successMessage && (
           <p className={styles.successMessage}>{successMessage}</p>
         )}
@@ -240,7 +236,7 @@ export default function EditPostModal({ postId, onClose }) {
             id='slug'
             type='text'
             value={slug}
-            readOnly
+            onChange={(e) => setSlug(e.target.value)}
             placeholder='Slug'
             helperText='The slug used in the post URL.'
           />
@@ -369,7 +365,7 @@ export default function EditPostModal({ postId, onClose }) {
             </span>
           )}
         </form>
-      </DialogPanel>
-    </Dialog>
+      </div>
+    </Modal>
   )
 }
