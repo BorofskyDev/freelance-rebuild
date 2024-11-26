@@ -8,6 +8,7 @@ import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import InputGroup from '@/components/inputs/input-group/InputGroup' // Import InputGroup
 import styles from './ContactForm.module.scss'
 import SubmitButton from '@/components/buttons/submit-button/SubmitButton'
+import MediumTitleContainer from '@/components/containers/title-containers/medium-title-container/MediumTitleContainer'
 
 export default function ContactForm() {
   // State variables for form fields
@@ -88,7 +89,7 @@ export default function ContactForm() {
     <div
       className={`bg-blue border-4 br-8 bs-6 ${styles.contactFormContainer}`}
     >
-      <h2>Get in Touch</h2>
+      <MediumTitleContainer className='bg-orange'>Get In Touch!</MediumTitleContainer>
       {successMessage && (
         <p className={styles.successMessage}>{successMessage}</p>
       )}
@@ -125,7 +126,7 @@ export default function ContactForm() {
           type='tel'
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          placeholder='Enter your phone number (optional)'
+          placeholder='Phone number (optional)'
           required={false}
           error={errors.phone}
           helperText=''
@@ -137,7 +138,7 @@ export default function ContactForm() {
           id='businessName'
           value={businessName}
           onChange={(e) => setBusinessName(e.target.value)}
-          placeholder='Enter your business name (optional)'
+          placeholder='Business name (optional)'
           required={false}
           error={errors.businessName}
           helperText=''
@@ -172,7 +173,7 @@ export default function ContactForm() {
         <SubmitButton
           type='submit'
           disabled={isSubmitting}
-          className='bg-green'
+          className={`bg-green ${styles.twoCols}`}
         >
           {isSubmitting ? 'Sending...' : 'Send'}
         </SubmitButton>

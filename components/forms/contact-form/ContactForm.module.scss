@@ -1,7 +1,8 @@
 /* components/forms/contact-form/ContactForm.module.scss */
+@use '../../../styles/mixins' as *;
 
 .contactFormContainer {
-  max-width: 600px;
+  max-width: 60rem;
   margin: 0 auto;
   padding: var(--spacing-200) var(--spacing-400);
   display: flex;
@@ -14,6 +15,16 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-200);
+
+    @include respond(laptop) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-800);
+    }
+
+    .twoCols {
+        grid-column: span 2;
+    }
   }
 
 }
