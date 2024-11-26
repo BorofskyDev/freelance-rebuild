@@ -1,14 +1,14 @@
 import PageHeader from '@/components/typography/headers/page-header/PageHeader'
-import styles from './page.module.scss'
 import ModalLinkContainer from '@/components/containers/section-containers/modal-link-container/ModalLinkContainer'
 import IconModalButton from '@/components/buttons/icon-modal-button/IconModalButton'
 import { CVAbout, PersonalAbout } from '@/components/pages/about/'
 import { icons } from '@/components/icons/icons'
 import { ProfessionalAbout } from '@/components/pages/about/ProfessionalAbout'
+import PageContainer from '@/components/containers/page-container/PageContainer'
 
 export default function AboutPage() {
   return (
-    <section className={`bg-red ${styles.aboutPage}`}>
+    <PageContainer className='bg-red'>
       <PageHeader>About Me!</PageHeader>
       <ModalLinkContainer>
         <IconModalButton
@@ -39,6 +39,6 @@ export default function AboutPage() {
           modalBg='bg-violet'
         />
       </ModalLinkContainer>
-    </section>
+    </PageContainer>
   )
 }

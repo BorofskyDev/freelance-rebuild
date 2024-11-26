@@ -9,11 +9,13 @@ import {
   Prices,
   HowItWorks,
 } from '@/components/pages/services'
-import styles from './page.module.scss'
+
+import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
+import PageContainer from '@/components/containers/page-container/PageContainer'
 
 export default function ServicesPage() {
   return (
-    <section className={`bg-blue ${styles.servicesPage}`}>
+    <PageContainer className='bg-blue'>
       <PageHeader>Services!</PageHeader>
       <ModalLinkContainer>
         <IconModalButton
@@ -62,6 +64,9 @@ export default function ServicesPage() {
           modalBg='bg-orange'
         />
       </ModalLinkContainer>
-    </section>
+      <InternalLinkBox href='/contact' >
+        Contact Me!
+      </InternalLinkBox>
+    </PageContainer>
   )
 }
