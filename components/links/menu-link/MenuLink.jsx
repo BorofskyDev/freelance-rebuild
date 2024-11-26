@@ -1,4 +1,4 @@
-import styles from './MenuLink.module.scss'
+import styles from './MenuLinkTemp.module.scss'
 
 function MenuLink({ content, handleMenuToggle, ...props }) {
   return (
