@@ -1,6 +1,6 @@
 
 import NavMenu from './nav-menu/NavMenu'
-import styles from './NavBar.module.scss'
+import styles from './Navbar.module.scss'
 
 function Navbar({ isSticky, navbarRef }) {
   return (
