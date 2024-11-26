@@ -8,6 +8,7 @@ import ImageContainer from '@/components/containers/image-container/ImageContain
 import ContactLinkContainer from '@/components/containers/contact-containers/contact-link-container/ContactLinkContainer'
 import contactImage from '@/public/img/profile/joel-hat-cutout.png'
 import styles from './ContactSection.module.scss'
+import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 export default function ContactSection() {
   return (
     <section className={`bg-violet ${styles.contactSection}`}>
@@ -15,7 +16,7 @@ export default function ContactSection() {
         <SectionHeader className='bg-green'>Contact</SectionHeader>
         <PageHeader>Hello Again!</PageHeader>
         <LargeTitleContainer className='relative bg-yellow'>
-          <span>Let's work together!</span>
+          <span>Let&apos;s work together!</span>
           <MediumIcon
             icon={icons.handshake.path}
             viewBox={icons.handshake.viewBox}
@@ -49,6 +50,7 @@ export default function ContactSection() {
           viewBox2={icons.cuteCat.viewBox}
         />
         <ContactLinkContainer />
+        <InternalLinkBox href='/contact'>Use my contact form!</InternalLinkBox>
       </div>
     </section>
   )

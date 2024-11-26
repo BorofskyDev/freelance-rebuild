@@ -1,12 +1,15 @@
 import PageHeader from '@/components/typography/headers/page-header/PageHeader'
-import styles from './page.module.scss'
 import PageContainer from '@/components/containers/page-container/PageContainer'
+import ContactLinkContainer from '@/components/containers/contact-containers/contact-link-container/ContactLinkContainer'
+import ContactForm from '@/components/forms/contact-form/ContactForm'
 
 
 export default function ContactPage() {
     return (
-        <PageContainer className={`bg-violet ${styles.contactPage}`}>
-            <PageHeader>Contact Me!</PageHeader>
-        </PageContainer>
+      <PageContainer className='bg-violet'>
+        <PageHeader>Contact Me!</PageHeader>
+        <ContactLinkContainer />
+        <ContactForm />
+      </PageContainer>
     )
 }

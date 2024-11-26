@@ -1,0 +1,34 @@
+/* components/forms/contact-form/ContactForm.module.scss */
+
+.contactFormContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-200) var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-600);
+
+  & .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+  }
+
+}
+
+.successMessage {
+  background-color: hsl(var(--color-green));
+  padding: var(--spacing-200);
+  border: var(--border-200);
+  border-radius: var(--border-radius-200);
+  box-shadow: var(--box-shadow-200);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+
+
+  

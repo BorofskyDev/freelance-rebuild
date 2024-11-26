@@ -39,12 +39,7 @@ export default function ContactLinkContainer() {
           My LinkedIn
         </ExternalButtonLink>
       
-        <InternalLinkBox
-         
-          href='/contact'
-        >
-          Use my contact form!
-        </InternalLinkBox>
+        
       
     </ul>
     </>
