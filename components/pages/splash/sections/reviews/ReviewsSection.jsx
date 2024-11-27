@@ -4,12 +4,14 @@ import SectionHeader from '@/components/typography/headers/section-header/Sectio
 import { icons } from '@/components/icons/icons'
 import styles from './ReviewsSection.module.scss'
 import ReviewContainer from '@/components/containers/review-container/ReviewContainer'
+import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 
 export default function ReviewsSection() {
     return (
       <FourSquareSectionContainer className={styles.reviewsSection}>
         <FourSquareBox className={`bg-red ${styles.boxOne}`}>
           <SectionHeader className='bg-blue'>Reviews</SectionHeader>
+          <InternalLinkBox href='/reviews'>View All Reviews!</InternalLinkBox>
         </FourSquareBox>
         <FourSquareBox className={`bg-violet ${styles.boxTwo}`}>
           <ReviewContainer

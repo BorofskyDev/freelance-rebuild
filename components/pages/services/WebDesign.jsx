@@ -1,5 +1,6 @@
 import { icons } from "@/components/icons/icons";
 import SmallServiceContainer from "@/components/containers/service-containers/small-service-container/SmallServiceContainer";
+import styles from './ServicesModals.module.scss'
 
 export function WebDesign(){
     return (

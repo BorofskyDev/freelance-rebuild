@@ -7,6 +7,7 @@ import nawaProjectImg from '@/public/img/projects/nawa.png'
 import momentsToMemoriesProjectImg from '@/public/img/projects/moments-to-memories.png'
 import criminalRollsProjectImg from '@/public/img/projects/criminal-rolls.png'
 import styles from './ProjectsSection.module.scss'
+import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 
 export default function ProjectsSection() {
   return (
@@ -58,27 +59,7 @@ export default function ProjectsSection() {
     iconFill='fill-vibrant-red'
    />
    
-   <ProjectContainer
-    className='bg-vibrant-green'
-    title='NAWA! '
-    alt='NAWA intro page with login'
-    src={nawaProjectImg}
-    blogHref='/'
-    liveSiteHref='/'
-    techIcon1={icons.nextjs.path}
-    xmlns1={icons.nextjs.xmlns}
-    viewBox1={icons.nextjs.viewBox}
-    techIcon2={icons.sass.path}
-    xmlns2={icons.sass.xmlns}
-    viewBox2={icons.sass.viewBox}
-    techIcon3={icons.firebase.path}
-    xmlns3={icons.firebase.xmlns}
-    viewBox3={icons.firebase.viewBox}
-    decorativeIcon={icons.work.path}
-    xmlns4={icons.work.xmlns}
-    viewBox4={icons.work.viewBox}
-    iconFill='fill-vibrant-green'
-   />
+   {/*   */}
    
    <ProjectContainer
     className='bg-vibrant-pink'
@@ -124,6 +105,7 @@ export default function ProjectsSection() {
     iconFill='fill-pink'
    />
     </div>
+    <InternalLinkBox href='/projects'>View More Projects!</InternalLinkBox>
     </section>
   )
 }

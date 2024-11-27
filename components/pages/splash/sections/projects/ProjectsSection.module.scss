@@ -13,6 +13,7 @@
     border-bottom: var(--border-400);
 
     & .projectsContainer {
+        margin-bottom: var(--spacing-600);
         display: flex;
         justify-content: center;
         align-items: center;

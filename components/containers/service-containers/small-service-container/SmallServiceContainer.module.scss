@@ -1,7 +1,6 @@
 @use '../../../../styles/mixins' as *;
 
 .smallServiceContainer {
-    height: 100%;
     width: 100%;
     padding: 2em;
     display: flex;
@@ -23,7 +22,6 @@
 
     & p, 
     & ul {
-        min-height: 10rem;
         background-color: hsl(var(--color-light));
         padding: 2em 1em;
         display: grid;
