@@ -1,0 +1,39 @@
+@use '../../../styles/mixins' as *;
+
+.messagesListContainer {
+  overflow-x: auto;
+
+  & .messagesTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    & th,
+    & td {
+      padding: 1rem;
+      border: var(--border-200);
+
+      text-align: left;
+    }
+  }
+
+  & .messageRow {
+    cursor: pointer;
+    @include transitionMain;
+
+    &:hover {
+      background-color: hsl(var(--color-pink));
+    }
+
+    & .subjectCell {
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  & .errorText {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}

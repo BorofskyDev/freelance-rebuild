@@ -5,6 +5,7 @@
 import { auth } from '@/lib/firebase'
 import { signOut } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
+import styles from './LogoutButton.module.scss'
 
 export default function LogoutButton() {
   const router = useRouter()
@@ -18,5 +19,5 @@ export default function LogoutButton() {
     router.push('/login')
   }
 
-  return <button onClick={handleLogout}>Logout</button>
+  return <button className={`bg-red border-2 br-8 bs-2 fw-bold ${styles.logoutButton}`} onClick={handleLogout}>Logout</button>
 }

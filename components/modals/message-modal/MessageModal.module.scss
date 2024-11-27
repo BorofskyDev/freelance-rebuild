@@ -1,0 +1,11 @@
+@use '../../../styles/mixins' as *;
+
+.messageModalContent {
+    margin: 0 auto;
+    padding: var(--spacing-800);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-400);
+}

@@ -11,12 +11,11 @@
   grid-template-rows: repeate(2, 1fr), 0.5fr;
   grid-template-areas:
     'title tabs'
+    'important important'
     'links links'
     'legal legal';
 
-  @include respond(tab) {
-    flex-direction: row;
-  }
+   
 
   & .header {
     grid-area: title;
@@ -92,5 +91,9 @@
 
   & .linksLearning {
     grid-area: links;
+  }
+
+  & .importantLinks {
+    grid-area: important;
   }
 }

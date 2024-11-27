@@ -1,0 +1,11 @@
+@use '../../../styles/mixins' as *;
+
+.logoutButton {
+    padding: var(--spacing-100);
+    cursor: pointer;
+    @include transitionMain;
+
+    &:hover, &:focus {
+        box-shadow: var(--box-shadow-400);
+    }
+}

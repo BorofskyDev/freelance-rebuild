@@ -8,6 +8,7 @@ export default function AdminPage() {
 
       <div className={styles.linkContainer}>
         <InternalLinkBox href='/admin/blog'>Blog</InternalLinkBox>
+      <InternalLinkBox href='/admin/messages'>Messages</InternalLinkBox>
       </div>
     </div>
   )
