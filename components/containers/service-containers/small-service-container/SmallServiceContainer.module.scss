@@ -13,7 +13,7 @@
     }
 
     @include respond(desktop) {
-        margin: 0 1rem;
+        margin: 0 auto;
         max-width: 28rem;
         min-height: 36rem;
         align-items: center;

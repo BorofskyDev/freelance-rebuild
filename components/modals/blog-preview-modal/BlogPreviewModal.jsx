@@ -6,7 +6,6 @@ import MediumHeader from '@/components/typography/headers/medium-header/Mediumhe
 import styles from './BlogPreviewModal.module.scss'
 import { useLatestPost } from '@/lib/hooks/blog/useLatestPost'
 import Image from 'next/image'
-import Link from 'next/link'
 import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 
 export default function BlogPreviewModal() {

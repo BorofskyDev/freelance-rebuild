@@ -5,6 +5,7 @@ import IconModalButton from '@/components/buttons/icon-modal-button/IconModalBut
 import BlogPreviewModal from '@/components/modals/blog-preview-modal/BlogPreviewModal'
 import { icons } from '@/components/icons/icons'
 import PageContainer from '@/components/containers/page-container/PageContainer'
+import BlogListModal from '@/components/modals/blog-list-modal/BlogListModal'
 
 export default function BlogPage() {
     return (
@@ -19,6 +20,15 @@ export default function BlogPage() {
             className='fill-vibrant-blue bg-pink'
             modalContent={<BlogPreviewModal />}
             modalBg='bg-pink'
+          />
+          <IconModalButton
+            label='All Posts'
+            icon={icons.posts.path}
+            viewBox={icons.posts.viewBox}
+            xmlns={icons.posts.xmlns}
+            className='fill-vibrant-purple bg-orange'
+            modalContent={<BlogListModal />}
+            modalBg='bg-orange'
           />
         </ModalLinkContainer>
       </PageContainer>
