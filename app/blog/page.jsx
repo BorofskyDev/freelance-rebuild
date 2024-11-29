@@ -6,6 +6,7 @@ import BlogPreviewModal from '@/components/modals/blog-preview-modal/BlogPreview
 import { icons } from '@/components/icons/icons'
 import PageContainer from '@/components/containers/page-container/PageContainer'
 import BlogListModal from '@/components/modals/blog-list-modal/BlogListModal'
+import TagListModal from '@/components/modals/tag-list-modal/TagListModal'
 
 export default function BlogPage() {
     return (
@@ -29,6 +30,15 @@ export default function BlogPage() {
             className='fill-vibrant-purple bg-orange'
             modalContent={<BlogListModal />}
             modalBg='bg-orange'
+          />
+          <IconModalButton 
+            label='Categories'
+            icon={icons.categories.path}
+            viewBox={icons.categories.viewBox}
+            xmlns={icons.categories.xmlns}
+            className='fill-vibrant-red bg-yellow'
+            modalContent={<TagListModal />}
+            modalBg='bg-yellow'
           />
         </ModalLinkContainer>
       </PageContainer>
