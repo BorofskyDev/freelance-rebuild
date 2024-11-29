@@ -12,6 +12,7 @@ import {
 
 import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 import PageContainer from '@/components/containers/page-container/PageContainer'
+import { Stack } from '@/components/pages/services/Stack'
 
 export default function ServicesPage() {
   return (
@@ -62,6 +63,15 @@ export default function ServicesPage() {
           className='fill-vibrant-blue bg-orange'
           modalContent={<HowItWorks />}
           modalBg='bg-orange'
+        />
+        <IconModalButton
+          label='Stack'
+          icon={icons.stack.path}
+          viewBox={icons.stack.viewBox}
+          xmlns={icons.stack.xmlns}
+          className='fill-vibrant-red bg-violet'
+          modalContent={<Stack />}
+          modalBg='bg-violet'
         />
       </ModalLinkContainer>
       <InternalLinkBox href='/contact' >

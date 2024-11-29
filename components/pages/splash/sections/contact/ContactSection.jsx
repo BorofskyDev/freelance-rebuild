@@ -25,7 +25,7 @@ export default function ContactSection() {
           />
         </LargeTitleContainer>
         <TextContainer>
-          I&apos;m open for consulting, freelance work, or employment. Feel free
+          I&apos;m open for consulting, freelance work, or partnerships. Feel free
           to reach out!
         </TextContainer>
       </div>
