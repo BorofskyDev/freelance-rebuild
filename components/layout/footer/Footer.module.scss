@@ -5,15 +5,22 @@
   width: 100%;
   border-top: var(--border-800);
   border-bottom: var(--border-800);
-  display: grid;
-  grid-auto-rows: 1fr;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeate(2, 1fr), 0.5fr;
-  grid-template-areas:
-    'title tabs'
-    'important important'
-    'links links'
-    'legal legal';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include respond(tab) {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeate(2, 1fr), 0.5fr;
+    grid-template-areas:
+      'title tabs'
+      'important important'
+      'links links'
+      'legal legal';
+
+  }
 
    
 
@@ -59,6 +66,7 @@
     gap: 1em;
 
     @include respond(tab) {
+      height: 100%;
       width: 50vw;
       gap: 2em;
       border-bottom: var(--border-200);
@@ -67,7 +75,9 @@
 
   & .links {
     width: 100%;
-    padding: 0 2em;
+    height: 100%;
+    padding: 4em 2em;
+    border-top: var(--border-200);
 
     @include respond(tab) {
       padding-top: 4em;

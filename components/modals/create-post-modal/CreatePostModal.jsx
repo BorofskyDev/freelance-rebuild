@@ -45,6 +45,7 @@ export default function CreatePostModal() {
     creatingTag,
     fetchTags,
     createTag,
+    uploadImage
   } = useCreatePost()
 
   /**
@@ -62,12 +63,11 @@ export default function CreatePostModal() {
       'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
     toolbar:
       'undo redo | formatselect | bold italic underline | \
-      alignleft aligncenter alignright alignjustify | \
-      bullist numlist outdent indent | removeformat | code | image | help',
+    alignleft aligncenter alignright alignjustify | \
+    bullist numlist outdent indent | removeformat | code | image | help',
     toolbar_mode: 'floating',
     setup: (editor) => {
       editorRef.current = editor
-      // Register custom image button if needed
       editor.on('init', () => {
         editor.formatter.register('code-block', {
           inline: false,
@@ -77,35 +77,37 @@ export default function CreatePostModal() {
       })
     },
     content_style: `
-      body {
-        direction: ltr; /* Enforce left-to-right */
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-      }
-      pre.hljs {
-        background: #f0f0f0;
-        padding: 1em;
-        border-radius: 5px;
-      }
-      code {
-        background-color: #f0f0f0;
-        padding: 2px 4px;
-        border-radius: 4px;
-      }
-      /* Add more custom styles here */
-    `,
-    automatic_uploads: true,
-    images_upload_handler: async (blobInfo, success, failure) => {
-      // Handle image uploads here if you want to allow drag-and-drop or paste images
-      try {
-        const file = blobInfo.blob()
-        const url = await uploadImage(file)
-        success(url)
-      } catch (error) {
-        failure('Image upload failed.')
+    /* Your custom styles */
+  `,
+    automatic_uploads: false,
+    file_picker_types: 'image',
+    file_picker_callback: (callback, value, meta) => {
+      if (meta.filetype === 'image') {
+        const input = document.createElement('input')
+        input.setAttribute('type', 'file')
+        input.setAttribute('accept', 'image/*')
+
+        input.onchange = function () {
+          const file = this.files[0]
+          uploadImage(file)
+            .then((url) => {
+              // Ensure the URL is correct and accessible
+              console.log('Uploaded image URL:', url)
+
+              // Use the URL in the callback
+              callback(url, { alt: file.name })
+            })
+            .catch((error) => {
+              console.error('Error uploading image:', error)
+              alert('Failed to upload image.')
+            })
+        }
+
+        input.click()
       }
     },
   }
+
 
   return (
     <div
