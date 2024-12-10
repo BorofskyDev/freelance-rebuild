@@ -12,6 +12,7 @@ import { useTags } from '@/lib/hooks/blog/useTags'
 import Image from 'next/image'
 import Modal from '@/components/modals/Modal' // Import your custom Modal component
 import styles from './EditPostModal.module.scss'
+import { uploadImage } from '@/lib/functions/blog/uploadImage' // Make sure this path is correct
 
 const Editor = dynamic(
   () => import('@tinymce/tinymce-react').then((mod) => mod.Editor),
@@ -57,22 +58,11 @@ export default function EditPostModal({ postId, onClose }) {
 
   const { availableTags, loadingTags, creatingTag, createTag } = useTags()
 
-  /**
-   * Handles changes to the title input.
-   *
-   * @param {Event} e - The change event from the title input.
-   */
   const handleTitleChange = (e) => {
     setTitle(e.target.value)
-    // Optionally, update the slug here if you want to allow slug changes
     setSlug(e.target.value.toLowerCase().replace(/\s+/g, '-'))
   }
 
-  /**
-   * Handles changes to the description input.
-   *
-   * @param {Event} e - The change event from the description input.
-   */
   const handleDescriptionChange = (e) => {
     const input = e.target.value
     const wordCount = input
@@ -91,26 +81,15 @@ export default function EditPostModal({ postId, onClose }) {
     }
   }
 
-  /**
-   * Handles changes to the rich text editor.
-   *
-   * @param {string} value - The HTML content from the editor.
-   */
   const handleContentChange = (value) => {
     setContent(value)
     setErrors((prev) => ({ ...prev, content: null }))
   }
 
-  /**
-   * Handles image file selection and generates a preview.
-   *
-   * @param {Event} e - The change event from the image input.
-   */
   const handleImageChange = (e) => {
     const file = e.target.files[0]
     if (file) {
       setImageFile(file)
-      // Generate image preview using FileReader
       const reader = new FileReader()
       reader.onloadend = () => {
         setImagePreview(reader.result)
@@ -122,9 +101,6 @@ export default function EditPostModal({ postId, onClose }) {
     }
   }
 
-  /**
-   * TinyMCE editor configuration
-   */
   const editorConfig = {
     height: 500,
     menubar: false,
@@ -161,19 +137,21 @@ export default function EditPostModal({ postId, onClose }) {
       }
     `,
     automatic_uploads: true,
-    images_upload_handler: async (blobInfo, success, failure) => {
-      // Handle image uploads within the editor
-      try {
-        const file = blobInfo.blob()
-        const url = await uploadImage(file, slug)
-        success(url)
-      } catch (error) {
-        failure('Image upload failed.')
-      }
-    },
+    images_upload_handler: (blobInfo, progress) =>
+      new Promise(async (resolve, reject) => {
+        try {
+          console.log('Slug at upload time:', slug)
+          const file = blobInfo.blob()
+          const fileName = blobInfo.filename() || `image-${Date.now()}.jpg`
+          const url = await uploadImage(file, slug, fileName)
+          console.log('URL returned from uploadImage:', url)
+          resolve(url) // Return the URL directly, no callbacks
+        } catch (error) {
+          reject('Image upload failed.')
+        }
+      }),
   }
 
-  // Optional: Show a loading state while the post is being fetched
   if (!post) {
     return (
       <Modal isOpen={true} onClose={onClose}>
@@ -217,7 +195,6 @@ export default function EditPostModal({ postId, onClose }) {
             )
           }
         >
-          {/* Title Input */}
           <InputGroup
             label='Post Title'
             id='title'
@@ -230,7 +207,6 @@ export default function EditPostModal({ postId, onClose }) {
             helperText='Enter a descriptive title for your post.'
           />
 
-          {/* Slug Display */}
           <InputGroup
             label='Post Slug'
             id='slug'
@@ -241,7 +217,6 @@ export default function EditPostModal({ postId, onClose }) {
             helperText='The slug used in the post URL.'
           />
 
-          {/* Image Upload */}
           <InputGroup
             label='Post Image'
             id='image'
@@ -252,7 +227,6 @@ export default function EditPostModal({ postId, onClose }) {
             helperText='Upload an image related to your post.'
           />
 
-          {/* Image Preview */}
           {imagePreview && (
             <div className={styles.imagePreview}>
               <Image
@@ -265,7 +239,6 @@ export default function EditPostModal({ postId, onClose }) {
             </div>
           )}
 
-          {/* Post Description */}
           <InputGroup
             label='Post Description'
             id='description'
@@ -278,7 +251,6 @@ export default function EditPostModal({ postId, onClose }) {
             helperText='Provide a concise description of your post (up to 100 words).'
           />
 
-          {/* Tag Selector */}
           <TagSelector
             availableTags={availableTags}
             loadingTags={loadingTags}
@@ -289,7 +261,6 @@ export default function EditPostModal({ postId, onClose }) {
             error={errors.tags}
           />
 
-          {/* TinyMCE Rich Text Editor for Content */}
           <div className={styles.inputGroup}>
             <label
               htmlFor='content'
@@ -316,7 +287,6 @@ export default function EditPostModal({ postId, onClose }) {
             )}
           </div>
 
-          {/* Published Checkbox */}
           <div className={styles.inputGroup}>
             <label htmlFor='published' className={styles.label}>
               <input
@@ -329,7 +299,6 @@ export default function EditPostModal({ postId, onClose }) {
             </label>
           </div>
 
-          {/* Publish Date */}
           {published && (
             <InputGroup
               label='Publish Date'
@@ -342,7 +311,6 @@ export default function EditPostModal({ postId, onClose }) {
             />
           )}
 
-          {/* Submit and Cancel Buttons */}
           <div className={styles.buttonGroup}>
             <button
               type='submit'
