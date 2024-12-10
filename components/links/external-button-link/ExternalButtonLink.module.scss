@@ -9,6 +9,8 @@
     color: hsl(var(--color-dark));
     text-transform: uppercase;
     letter-spacing: 0.125em;
+    font-family: var(--font-link);
+    font-size: var(--fs-500);
     @include transitionMain;
 
     @include respond(laptop) {

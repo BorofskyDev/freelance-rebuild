@@ -1,5 +1,4 @@
 import ExternalButtonLink from '@/components/links/external-button-link/ExternalButtonLink'
-import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 import LargeTitleContainer from '../../title-containers/large-title-container/LargeTitleContainer'
 import MediumIcon from '@/components/icons/medium-icon/MediumIcon'
 import { icons } from '@/components/icons/icons'

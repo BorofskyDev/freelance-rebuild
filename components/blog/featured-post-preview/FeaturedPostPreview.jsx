@@ -16,7 +16,7 @@ export default function FeaturedPostPreview({
 }) {
   return (
     <div className={`border-4 bs-6 br-6 ${cardBg} ${styles.featuredPostPreview}`}>
-      <Image className='border-2 bs-2' src={image} alt={title} height={1060} width={1280} />
+      <Image className={`border-2 bs-2 ${styles.image}`} src={image} alt={title} height={1060} width={1280} />
       <div className={styles.content}>
         <FeaturedPostHeader>{title}</FeaturedPostHeader>
         <div className={`bg-light border-1 bs-2 br-9 ${styles.dateCat}`}>
