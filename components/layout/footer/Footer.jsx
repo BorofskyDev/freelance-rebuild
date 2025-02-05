@@ -95,7 +95,7 @@ export default function Footer() {
             Coder Coder
           </ExternalButtonLink>
           <ExternalButtonLink
-            href='https://www.kevinpowell.com'
+            href='https://www.kevinpowell.co'
             className='bg-violet'
           >
             Kevin Powell

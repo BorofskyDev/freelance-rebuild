@@ -60,7 +60,7 @@ export default function ProjectsSection() {
    />
    
    {/*   */}
-   
+{/*    
    <ProjectContainer
     className='bg-vibrant-pink'
     title='Moments to Memories'
@@ -82,7 +82,7 @@ export default function ProjectsSection() {
     viewBox4={icons.camera.viewBox}
     iconFill='fill-vibrant-pink'
    />
-   
+    */}
    <ProjectContainer
     className='bg-pink'
     title='Criminal Rolls'
@@ -105,7 +105,7 @@ export default function ProjectsSection() {
     iconFill='fill-pink'
    />
     </div>
-    <InternalLinkBox href='/projects'>View More Projects!</InternalLinkBox>
+    {/* <InternalLinkBox href='/projects'>View More Projects!</InternalLinkBox> */}
     </section>
   )
 }
