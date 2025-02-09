@@ -95,9 +95,9 @@ export default function AboutSection() {
           <br />
           Based in Kansas, USA, I&apos;m a fullstack developer who also loves
           design and UI/UX. After spending years doing banking, finance, and
-          business development in North Carolina and New York, as well as helpin
-          ga few start ups and even attempting one of my own, I decided to do
-          the meme and learn to code. My passion is around making the web
+          business development in North Carolina and New York, as well as
+          helping a few start ups and even attempting one of my own, I decided
+          to do the meme and learn to code. My passion is around making the web
           beautiful, accessible, fun, and - probably most importantly - working.
           <br />
           <br />
@@ -108,7 +108,7 @@ export default function AboutSection() {
           I&apos;ve also been told that I&apos;m fun!
         </TextContainer>
       </div>
-      <InternalLinkBox  href='/about/'>Learn more about me!</InternalLinkBox>
+      <InternalLinkBox href='/about/'>Learn more about me!</InternalLinkBox>
     </FlexColContainer>
   )
 }
