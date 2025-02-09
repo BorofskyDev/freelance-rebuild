@@ -21,7 +21,7 @@ export default function FeaturedPostPreview({
         <FeaturedPostHeader>{title}</FeaturedPostHeader>
         <div className={`bg-light border-1 bs-2 br-9 ${styles.dateCat}`}>
           <SmallText>{date}</SmallText>
-          <SmallText>{category}</SmallText>
+          {/* <SmallText>{category}</SmallText> */}
         </div>
         <TextContainer>{content}</TextContainer>
       </div>

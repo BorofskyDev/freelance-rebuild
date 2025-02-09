@@ -31,7 +31,7 @@ export default function BlogPage() {
             modalContent={<BlogListModal />}
             modalBg='bg-orange'
           />
-          <IconModalButton 
+          {/* <IconModalButton 
             label='Categories'
             icon={icons.categories.path}
             viewBox={icons.categories.viewBox}
@@ -39,7 +39,7 @@ export default function BlogPage() {
             className='fill-vibrant-red bg-yellow'
             modalContent={<TagListModal />}
             modalBg='bg-yellow'
-          />
+          /> */}
         </ModalLinkContainer>
       </PageContainer>
     )
