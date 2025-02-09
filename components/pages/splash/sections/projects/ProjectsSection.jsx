@@ -13,54 +13,53 @@ export default function ProjectsSection() {
   return (
     <section id='projects' className={styles.projectsSection}>
       <SectionHeader className='bg-red'>Projects</SectionHeader>
-    <div className={styles.projectsContainer}>
+      <div className={styles.projectsContainer}>
+        <ProjectContainer
+          className='bg-vibrant-blue'
+          title='This Site!'
+          src={freelanceSiteProjectImg}
+          alt='intro section of this website'
+          blogHref='/blog/how-to-design-a-gaudy-profile-site'
+          liveSiteHref='/'
+          techIcon1={icons.nextjs.path}
+          xmlns1={icons.nextjs.xmlns}
+          viewBox1={icons.nextjs.viewBox}
+          techIcon2={icons.sass.path}
+          xmlns2={icons.sass.xmlns}
+          viewBox2={icons.sass.viewBox}
+          techIcon3={icons.firebase.path}
+          xmlns3={icons.firebase.xmlns}
+          viewBox3={icons.firebase.viewBox}
+          decorativeIcon={icons.cat.path}
+          xmlns4={icons.cat.xmlns}
+          viewBox4={icons.cat.viewBox}
+          iconFill='fill-vibrant-blue'
+        />
 
-    <ProjectContainer
-    className='bg-vibrant-blue'
-    title='This Site!'
-    src={freelanceSiteProjectImg}
-    alt='intro section of this website'
-    blogHref='/blog'
-    liveSiteHref='/'
-    techIcon1={icons.nextjs.path}
-    xmlns1={icons.nextjs.xmlns}
-    viewBox1={icons.nextjs.viewBox}
-    techIcon2={icons.sass.path}
-    xmlns2={icons.sass.xmlns}
-    viewBox2={icons.sass.viewBox}
-    techIcon3={icons.firebase.path}
-    xmlns3={icons.firebase.xmlns}
-    viewBox3={icons.firebase.viewBox}
-    decorativeIcon={icons.cat.path}
-    xmlns4={icons.cat.xmlns}
-    viewBox4={icons.cat.viewBox}
-    iconFill='fill-vibrant-blue'
-    />
-   
-   <ProjectContainer
-    className='bg-vibrant-red'
-    title='Rebekah Fowler Profile'
-    alt='Rebekah Fowler Profile'
-    src={rfProjectImg}
-    blogHref='https://rebekahfowler.com/'
-    liveSiteHref='https://rebekahfowler.com/'
-    techIcon1={icons.nextjs.path}
-    xmlns1={icons.nextjs.xmlns}
-    viewBox1={icons.nextjs.viewBox}
-    techIcon2={icons.sass.path}
-    xmlns2={icons.sass.xmlns}
-    viewBox2={icons.sass.viewBox}
-    techIcon3={icons.framerMotion.path}
-    xmlns3={icons.framerMotion.xmlns}
-    viewBox3={icons.framerMotion.viewBox}
-    decorativeIcon={icons.profile.path}
-    xmlns4={icons.profile.xmlns}
-    viewBox4={icons.profile.viewBox}
-    iconFill='fill-vibrant-red'
-   />
-   
-   {/*   */}
-{/*    
+        <ProjectContainer
+          className='bg-vibrant-red'
+          title='Rebekah Fowler Profile'
+          alt='Rebekah Fowler Profile'
+          src={rfProjectImg}
+          blogHref='/blog/designing-a-basic-portfolio-site'
+          liveSiteHref='https://rebekahfowler.com/'
+          techIcon1={icons.nextjs.path}
+          xmlns1={icons.nextjs.xmlns}
+          viewBox1={icons.nextjs.viewBox}
+          techIcon2={icons.sass.path}
+          xmlns2={icons.sass.xmlns}
+          viewBox2={icons.sass.viewBox}
+          techIcon3={icons.framerMotion.path}
+          xmlns3={icons.framerMotion.xmlns}
+          viewBox3={icons.framerMotion.viewBox}
+          decorativeIcon={icons.profile.path}
+          xmlns4={icons.profile.xmlns}
+          viewBox4={icons.profile.viewBox}
+          iconFill='fill-vibrant-red'
+        />
+
+        {/*   */}
+        {/*    
    <ProjectContainer
     className='bg-vibrant-pink'
     title='Moments to Memories'
@@ -83,29 +82,29 @@ export default function ProjectsSection() {
     iconFill='fill-vibrant-pink'
    />
     */}
-   <ProjectContainer
-    className='bg-pink'
-    title='Criminal Rolls'
-    alt='criminal rolls splash page'
-    src={criminalRollsProjectImg}
-    blogHref='/'
-    liveSiteHref='/'
-    techIcon1={icons.nextjs.path}
-    xmlns1={icons.nextjs.xmlns}
-    viewBox1={icons.nextjs.viewBox}
-    techIcon2={icons.tailwind.path}
-    xmlns2={icons.tailwind.xmlns}
-    viewBox2={icons.tailwind.viewBox}
-    techIcon3={icons.firebase.path}
-    xmlns3={icons.firebase.xmlns}
-    viewBox3={icons.firebase.viewBox}
-    decorativeIcon={icons.cinnamonRoll.path}
-    xmlns4={icons.cinnamonRoll.xmlns}
-    viewBox4={icons.cinnamonRoll.viewBox}
-    iconFill='fill-pink'
-   />
-    </div>
-    {/* <InternalLinkBox href='/projects'>View More Projects!</InternalLinkBox> */}
+        <ProjectContainer
+          className='bg-pink'
+          title='Criminal Rolls'
+          alt='criminal rolls splash page'
+          src={criminalRollsProjectImg}
+          blogHref='/blog/arresting-the-criminal-rolls-design'
+          liveSiteHref='https://criminal-rolls-dev.vercel.app/'
+          techIcon1={icons.nextjs.path}
+          xmlns1={icons.nextjs.xmlns}
+          viewBox1={icons.nextjs.viewBox}
+          techIcon2={icons.tailwind.path}
+          xmlns2={icons.tailwind.xmlns}
+          viewBox2={icons.tailwind.viewBox}
+          techIcon3={icons.firebase.path}
+          xmlns3={icons.firebase.xmlns}
+          viewBox3={icons.firebase.viewBox}
+          decorativeIcon={icons.cinnamonRoll.path}
+          xmlns4={icons.cinnamonRoll.xmlns}
+          viewBox4={icons.cinnamonRoll.viewBox}
+          iconFill='fill-pink'
+        />
+      </div>
+      {/* <InternalLinkBox href='/projects'>View More Projects!</InternalLinkBox> */}
     </section>
   )
 }
