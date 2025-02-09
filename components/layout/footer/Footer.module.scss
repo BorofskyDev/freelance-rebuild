@@ -33,6 +33,7 @@
 
     @include respond(tab) {
       width: 50vw;
+      height: 100%;
       padding-inline: 4em;
       border-right: var(--border-400);
       border-bottom: var(--border-200);

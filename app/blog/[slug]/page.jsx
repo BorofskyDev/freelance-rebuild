@@ -23,6 +23,7 @@ import SmallText from '@/components/typography/small-text/SmallText'
 import parse from 'html-react-parser'
 import DOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
+import FeaturedPostHeader from '@/components/typography/blog-headers/featured-post-header/FeaturedPostHeader'
 
 export default async function BlogPostPage({ params }) {
   const resolvedParams = await params
@@ -73,9 +74,9 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <article className={`bg-blue ${styles.blogPostPage}`}>
-      <SectionHeader className={`bg-yellow ${styles.title}`}>
+      <FeaturedPostHeader className={`bg-yellow ${styles.title}`}>
         {title}
-      </SectionHeader>
+      </FeaturedPostHeader>
       {imageURL && (
         <Image
           className={`border-4 br-8 bs-6 ${styles.image}`}
@@ -89,7 +90,7 @@ export default async function BlogPostPage({ params }) {
         <SmallText className={`bg-light border-2 bs-2 br-8 ${styles.date}`}>
           Published on {formattedPublishDate}
         </SmallText>
-        <div className={`bg-light border-2 bs-2 br-8 ${styles.tags}`}>
+        {/* <div className={`bg-light border-2 bs-2 br-8 ${styles.tags}`}>
           Tags:
           {tagNames.length > 0 ? (
             tagNames.map((tagName, index) => (
@@ -100,7 +101,7 @@ export default async function BlogPostPage({ params }) {
           ) : (
             <span>No tags</span>
           )}
-        </div>
+        </div> */}
       </div>
       {/* Render the parsed content */}
       <div className={`bg-light border-2 bs-3 br-6 ${styles.content}`}>
