@@ -6,8 +6,8 @@ import rfProjectImg from '@/public/img/projects/rf.png'
 import nawaProjectImg from '@/public/img/projects/nawa.png'
 import momentsToMemoriesProjectImg from '@/public/img/projects/moments-to-memories.png'
 import criminalRollsProjectImg from '@/public/img/projects/criminal-rolls.png'
+import escapeFromEdenImg from '@/public/img/projects/escape.png'
 import styles from './ProjectsSection.module.scss'
-import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 
 export default function ProjectsSection() {
   return (
@@ -56,6 +56,28 @@ export default function ProjectsSection() {
           xmlns4={icons.profile.xmlns}
           viewBox4={icons.profile.viewBox}
           iconFill='fill-vibrant-red'
+        />
+
+        <ProjectContainer
+          className='bg-vibrant-green'
+          title='Escape From Eden Blog'
+          alt='Escape from eden blog'
+          src={escapeFromEdenImg}
+          blogHref='/blog/escape-from-neubrutalism'
+          liveSiteHref='https://escape-from-eden-sql.vercel.app/'
+          techIcon1={icons.nextjs.path}
+          xmlns1={icons.nextjs.xmlns}
+          viewBox1={icons.nextjs.viewBox}
+          techIcon2={icons.tailwind.path}
+          xmlns2={icons.tailwind.xmlns}
+          viewBox2={icons.tailwind.viewBox}
+          techIcon3={icons.postgres.path}
+          xmlns3={icons.postgres.xmlns}
+          viewBox3={icons.postgres.viewBox}
+          decorativeIcon={icons.bittenApple.path}
+          xmlns4={icons.bittenApple.xmlns}
+          viewBox4={icons.bittenApple.viewBox}
+          iconFill='fill-vibrant-green'
         />
 
         {/*   */}

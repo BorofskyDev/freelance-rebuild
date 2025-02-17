@@ -79,7 +79,9 @@ export default function StackSection() {
           viewBox={icons.figma.viewBox}
           className={`bg-vibrant-orange fill-vibrant-blue ${styles.stackIcon4}`}
         />
-        <InternalLinkBox className={styles.exBtn} href='/stack'>Learn more about my stack!</InternalLinkBox>
+        <InternalLinkBox className={styles.exBtn} href='/stack'>
+          Learn more about my stack!
+        </InternalLinkBox>
       </FourSquareBox>
       <FourSquareBox className={`bg-green ${styles.boxFour}`}>
         <ExternalButtonLink className='bg-yellow' href='https://www.figma.com/'>
@@ -88,11 +90,13 @@ export default function StackSection() {
         <ExternalButtonLink className='bg-violet' href='https://sass-lang.com/'>
           SASS/SCSS
         </ExternalButtonLink>
-        <ExternalButtonLink className='bg-pink' href='https://www.framer.com/motion/'>
-          Framer Motion
+        <ExternalButtonLink className='bg-pink' href='https://www.prisma.io/'>
+          Prisma
         </ExternalButtonLink>
-       
-        <InternalLinkBox className={styles.exBtn} href='/stack'>Learn more about my stack!</InternalLinkBox>
+
+        <InternalLinkBox className={styles.exBtn} href='/stack'>
+          Learn more about my stack!
+        </InternalLinkBox>
       </FourSquareBox>
     </FourSquareSectionContainer>
   )
