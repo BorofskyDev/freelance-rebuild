@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './MobileNavMenu.module.scss'
 import NavMenu from '../nav-menu/NavMenu'
+import ResumeCvButton from '@/components/buttons/resume-cv-button/ResumeCvButton'
 
 const menuVariants = {
   open: {
@@ -31,6 +32,7 @@ export default function MobileNavMenu({ handleMenuToggle }) {
   return (
     <motion.nav className={styles.mobileMenu} variants={menuVariants}>
       <NavMenu handleMenuToggle={handleMenuToggle} />
+      <ResumeCvButton className='bg-blue' />
     </motion.nav>
   )
 }

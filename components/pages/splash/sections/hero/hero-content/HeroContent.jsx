@@ -15,7 +15,7 @@ export default function HeroContent() {
       </p>
       <p className='fs-500 fw-medium-bold'>I am a...</p>
       <LargeTitleContainer className='relative bg-red font-handwriting'>
-        Fullstack Developer
+        UI/UX Developer
         <MediumIcon
           icon={notBad.path}
           viewBox={notBad.viewBox}

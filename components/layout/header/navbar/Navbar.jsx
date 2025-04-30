@@ -1,4 +1,5 @@
 
+import ResumeCvButton from '@/components/buttons/resume-cv-button/ResumeCvButton'
 import NavMenu from './nav-menu/NavMenu'
 import styles from './Navbar.module.scss'
 
@@ -9,6 +10,7 @@ function Navbar({ isSticky, navbarRef }) {
       ref={navbarRef}
     >
       <NavMenu />
+      <ResumeCvButton className='bg-blue' />
     </nav>
   )
 }

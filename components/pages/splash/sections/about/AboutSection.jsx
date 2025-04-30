@@ -7,6 +7,7 @@ import aboutPicture from '@/public/img/profile/joel-cutout-kyiv.png'
 import { icons } from '@/components/icons/icons'
 import styles from './AboutSection.module.scss'
 import TextContainer from '@/components/containers/text-container/TextContainer'
+import ResumeCvButton from '@/components/buttons/resume-cv-button/ResumeCvButton'
 
 export default function AboutSection() {
   return (
@@ -24,11 +25,8 @@ export default function AboutSection() {
           headerClassName='bg-violet'
         >
           <p className='border-2 br-5 bs-2'>
-            Nextjs, React, Firebase, TailwindCSS, and more!
+            Next.js, React, Firebase, Prisma, & more!
           </p>
-          <InternalLinkBox href='/services'>
-            Learn more about development services
-          </InternalLinkBox>
         </SmallServiceContainer>
 
         <SmallServiceContainer
@@ -42,11 +40,9 @@ export default function AboutSection() {
           headerClassName='bg-pink'
         >
           <p className='border-2 br-5 bs-2'>
-            Figma, SASS/SCSS, Framer Motion, TailwindCSS, and other libraries!
+            Figma, SASS/SCSS, Framer Motion, TailwindCSS, Accesibility-first
+            design, and even more!
           </p>
-          <InternalLinkBox href='/services'>
-            Learn more about web design services
-          </InternalLinkBox>
         </SmallServiceContainer>
 
         <SmallServiceContainer
@@ -61,12 +57,9 @@ export default function AboutSection() {
           headerSpanText='(er)'
         >
           <p className='border-2 br-5 bs-2'>
-            Financial Sales, Marketing, Customer Service, Stakeholder Relations,
-            even Retail!
+            Financial sales, marketing, stakeholder relations, entrepreneurship,
+            and even retail!
           </p>
-          <InternalLinkBox href='/services'>
-            Learn more about business services
-          </InternalLinkBox>
         </SmallServiceContainer>
       </div>
       <div className={styles.bioContainer}>
@@ -93,22 +86,44 @@ export default function AboutSection() {
           Hello there!
           <br />
           <br />
-          Based in Kansas, USA, I&apos;m a fullstack developer who also loves
-          design and UI/UX. After spending years doing banking, finance, and
-          business development in North Carolina and New York, as well as
-          helping a few start ups and even attempting one of my own, I decided
-          to do the meme and learn to code. My passion is around making the web
-          beautiful, accessible, fun, and - probably most importantly - working.
+          I&apos;m Joel, a full-stack (as much as one can be) UI/UX developer
+          based in Kansas, USA, passionate about creating digital experiences
+          where a component isn&apos;t truly functional until it&apos;s
+          beautiful, accessible, and delightful.
           <br />
           <br />
-          My stack of HTML, CSS, JavaScript, Nextjs, Firebase, TailwindCSS, and
-          more ensure that I&apos;m a great fit for your team and project.
-          I&apos;m always looking for new opportunities to learn and grow, so if
-          you&apos;re looking for a developer, designer, or business person,
-          I&apos;ve also been told that I&apos;m fun!
+          Before diving into the world wide web (of development and design), I
+          spent years in banking, finance, and business developmens across North
+          Carolina and New York, supporting startups and even launching my own
+          ventures. The unique blend of design, tech, and business acumen allows
+          me to deeply understand user needs, stakeholder expectations, and how
+          great UI/UX can drive meaningful business outcomes.
+          <br />
+          <br />
+          My go-to stack of Next.js with SCSS and modern styling approaches is
+          chosen not just for effeciency, but for their ability to create
+          accessible and intuitive user interfaces. No matter the task, my goal
+          is the same: make the web work for everyone.
+          <br />
+          <br />
+          Currently, I&apos;m seeking new opportutnities with forward-thinking
+          teams across Europe, or remotely within the US. For those who are
+          offering a hybrid or in-office situation, if you&apos;re located in a
+          vibrant, creative hub like New England, the Upper Midwest, or the
+          Pacific North West, feel free to reach out!
+          <br />
+          <br />
+          If you&apos;re a recruiter or represent a company that values
+          creativity, accessibility, and thoughtful UI/UX design, let&apos;s
+          talk! I&apos;ve been told I&apos;m fun to work with, I mean, how many
+          UI/UX developers have a profile picture featuring themselves with a
+          falcon?
         </TextContainer>
       </div>
+      <div className={styles.linkContainer}>
       <InternalLinkBox href='/about/'>Learn more about me!</InternalLinkBox>
+      <ResumeCvButton className='bg-violet' />
+      </div>
     </FlexColContainer>
   )
 }

@@ -9,7 +9,10 @@
     position: relative;
     grid-row: 2 / 2;
     width: 100vw;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-800);
     padding: var(--spacing-400);
     border-bottom: var(--border-600);
     border-top: var(--border-600);

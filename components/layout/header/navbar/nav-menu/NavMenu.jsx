@@ -13,21 +13,9 @@ export default function NavMenu({ handleMenuToggle }) {
         handleMenuToggle={handleMenuToggle}
       />
       <MenuLink
-        href='/services'
-        data-text='Services'
-        content='Services'
-        handleMenuToggle={handleMenuToggle}
-      />
-      <MenuLink
         href='/about'
         data-text='About'
         content='About'
-        handleMenuToggle={handleMenuToggle}
-      />
-      <MenuLink
-        href='/blog'
-        data-text='Blog'
-        content='Blog'
         handleMenuToggle={handleMenuToggle}
       />
       <MenuLink

@@ -93,6 +93,12 @@ export default function StackSection() {
         <ExternalButtonLink className='bg-pink' href='https://www.prisma.io/'>
           Prisma
         </ExternalButtonLink>
+        <ExternalButtonLink
+          className='bg-blue'
+          href='https://www.w3.org/WAI/standards-guidelines/wcag/'
+        >
+          Accessibility
+        </ExternalButtonLink>
 
         <InternalLinkBox className={styles.exBtn} href='/stack'>
           Learn more about my stack!
