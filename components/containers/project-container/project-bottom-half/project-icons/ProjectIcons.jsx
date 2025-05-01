@@ -1,47 +1,43 @@
 import ProjectIcon from './project-icon/ProjectIcon'
+import { icons as ICONS } from '@/components/icons/icons'
 import styles from './ProjectIcons.module.scss'
 
-export default function ProjectIcons({
-  techIcon1,
-  xmlns1,
-  viewBox1,
-  techIcon2,
-  xmlns2,
-  viewBox2,
-  techIcon3,
-  xmlns3,
-  viewBox3,
-  decorativeIcon,
-  xmlns4,
-  viewBox4,
-  iconFill,
-}) {
+export default function ProjectIcons({ icons = [], iconFill }) {
+  const techIcons = icons.slice(0, 3)
+  const decorativeIcon = icons[3]
+
+  const positionClasses = [
+    styles.topPosition,
+    styles.rightPosition,
+    styles.bottomPosition,
+  ]
+
   return (
-    <div className={styles.projectIcons}>
-      <ProjectIcon
-        icon={techIcon1}
-        xmlns={xmlns1}
-        viewBox={viewBox1}
-        iconFill={iconFill}
-      />
-      <ProjectIcon
-        icon={techIcon2}
-        xmlns={xmlns2}
-        viewBox={viewBox2}
-        iconFill={iconFill}
-      />
-      <ProjectIcon
-        icon={techIcon3}
-        xmlns={xmlns3}
-        viewBox={viewBox3}
-        iconFill={iconFill}
-      />
-      <ProjectIcon
-        icon={decorativeIcon}
-        xmlns={xmlns4}
-        viewBox={viewBox4}
-        iconFill={iconFill}
-      />
-    </div>
+    <ul className={`${styles.projectIcons} ${styles.projectIcon}`}>
+      {techIcons.map((iconKey, index) => {
+        const { xmlns, viewBox, path } = ICONS[iconKey]
+        return (
+          <ProjectIcon
+            key={iconKey}
+            xmlns={xmlns}
+            viewBox={viewBox}
+            path={path}
+            iconFill={iconFill}
+            className={positionClasses[index]}
+          />
+        )
+      })}
+
+      {decorativeIcon && (
+        <ProjectIcon
+          xmlns={ICONS[decorativeIcon].xmlns}
+          viewBox={ICONS[decorativeIcon].viewBox}
+          path={ICONS[decorativeIcon].path}
+          ariaLabel={ICONS[decorativeIcon].ariaLabel}
+          iconFill={iconFill}
+          className={styles.leftPosition}
+        />
+      )}
+    </ul>
   )
 }
