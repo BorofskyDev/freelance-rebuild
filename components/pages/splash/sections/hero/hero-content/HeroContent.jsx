@@ -4,6 +4,7 @@ import MediumIcon from '@/components/icons/medium-icon/MediumIcon'
 import { icons } from '@/components/icons/icons'
 import styles from './HeroContent.module.scss'
 import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
+import ResumeCvButton from '@/components/buttons/resume-cv-button/ResumeCvButton'
 
 export default function HeroContent() {
   const notBad = icons.notBad
@@ -23,7 +24,10 @@ export default function HeroContent() {
           className='bg-light fill-vibrant-blue top-right'
         />
       </LargeTitleContainer>
-      <InternalLinkBox href='/contact'>Contact Me!</InternalLinkBox>
+      <div className={styles.heroContent__cta}>
+        <ResumeCvButton className='bg-yellow' />
+        <InternalLinkBox href='/contact'>Contact Me!</InternalLinkBox>
+      </div>
     </div>
   )
 }

@@ -10,7 +10,7 @@
     grid-row: 2 / 2;
     width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: var(--spacing-800);
     padding: var(--spacing-400);
@@ -19,6 +19,19 @@
     background-color: hsl(var(--color-light));
     z-index: 9000 !important; // This is for the developer
     @include transitionMain;
+  }
+  &__container {
+    @include respond(laptop) {
+      width: 50%;
+    }
+
+    &:last-child {
+      @include respond(laptop) {
+        width: 100%;
+        display: grid;
+        place-items: center;
+      }
+    }
   }
 }
 
@@ -34,7 +47,6 @@
   & ul {
     font-size: var(--fs-500);
   }
-
 }
 
 .navbarOffsetMargin {

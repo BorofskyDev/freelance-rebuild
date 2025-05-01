@@ -122,7 +122,7 @@ export default function AboutSection() {
       </div>
       <div className={styles.linkContainer}>
       <InternalLinkBox href='/about/'>Learn more about me!</InternalLinkBox>
-      <ResumeCvButton className='bg-violet' />
+      <ResumeCvButton className='bg-green' />
       </div>
     </FlexColContainer>
   )

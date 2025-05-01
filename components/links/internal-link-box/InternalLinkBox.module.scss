@@ -1,6 +1,7 @@
 @use '../../../styles/mixins' as *;
 
 .internalLinkBox {
+  min-width: fit-content;
   padding: var(--spacing-100) var(--spacing-200);
   box-shadow: var(--box-shadow-200);
   background-color: hsl(var(--color-light));

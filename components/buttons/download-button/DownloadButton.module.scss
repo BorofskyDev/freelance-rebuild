@@ -1,0 +1,32 @@
+@use '@/styles/mixins' as *;
+
+.downloadButton {
+  position: relative;
+  min-width: fit-content;
+  padding: var(--spacing-100) var(--spacing-400);
+  border: var(--border-200);
+  border-radius: var(--br-800);
+  box-shadow: var(--box-shadow-200);
+  color: inherit;
+  font-size: var(--fs-600);
+  font-weight: 700;
+  cursor: pointer;
+  @include transitionMain;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: var(--box-shadow-400);
+  }
+
+  &:active {
+    box-shadow: var(--box-shadow-200);
+  }
+
+  &__fileType {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: var(--fs-300);
+    font-weight: 400;
+    opacity: 0.75;
+  }
+}
