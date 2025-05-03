@@ -1,28 +1,44 @@
+@use '@/styles/mixins' as *;
+
 @use '../../../styles/mixins' as *;
 
+
+$image-container-min-height-mobile: 21.25rem;
+$image-container-min-width-mobile: 20.2rem;
+$image-container-min-height-desktop: 28rem;
+$image-container-min-width-desktop: 26rem;
+$image-height-mobile: 15em;
+$image-width-mobile: 14em; 
+$image-height-desktop: 20em;
+$image-width-desktop: 18em;
+
+
 .imageContainer {
-    min-height: 21.25rem;
-    min-width: 20.2rem;
+    min-height: $image-container-min-height-mobile;
+    min-width: $image-container-min-width-mobile;
     grid-row: 2/4;
     grid-column: 2/4;
     display: grid;
     place-items: center;
     padding: var(--spacing-400);
 
+  
+
     @include respond(desktop) {
-        min-height: 28rem;
-        min-width: 26rem;
+        min-height: $image-container-min-height-desktop;
+        min-width: $image-container-min-width-desktop;
     }
 }
 
+
 .image {
-    height: 15em;
-    width: 14em;
+    height: $image-height-mobile;
+    width: $image-width-mobile;
     object-fit: contain;
     object-position: bottom;
     
     @include respond(desktop) {
-        height: 20em;
-        width: 18em;
+        height: $image-height-desktop;
+        width: $image-width-desktop;
     }
 }

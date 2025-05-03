@@ -12,9 +12,10 @@
     }
 
     & span {
+        max-width: fit-content;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 5px;
+        right: -15px;
         line-height: 95%;
         letter-spacing: -0.01em;
         transform: translate(3.75em, 45%) rotate(45deg) skew(-5deg);

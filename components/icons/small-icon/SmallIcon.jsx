@@ -1,15 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
-import SmallIconImg from './small-icon-img/SmallIconImg'
 import styles from './SmallIcon.module.scss'
 
 export default function SmallIcon({
   icon,
-  viewBox,
-  xmlns,
-  iconFill,
-  className,
-  position,
+  viewBox = '0 0 24 24',
+  xmlns = 'http://www.w3.org/2000/svg',
+  fill = 'currentColor',
+  className = '',
+  position = 'left',
 }) {
   const positionClass = position === 'left' ? styles.left : styles.right
 
@@ -31,12 +30,9 @@ export default function SmallIcon({
       }}
       aria-hidden
     >
-      <SmallIconImg
-        icon={icon}
-        viewBox={viewBox}
-        xmlns={xmlns}
-        iconFill={iconFill}
-      />
+      <svg viewBox={viewBox} xmlns={xmlns} className={styles.smallIconImg}>
+        <path d={icon} className={fill} />
+      </svg>
     </motion.div>
   )
 }

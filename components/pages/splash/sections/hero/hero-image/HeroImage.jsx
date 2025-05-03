@@ -7,23 +7,34 @@ export default function HeroImage() {
   return (
     <div className={styles.heroImage}>
       <ImageContainer
-        className='bg-green'
-        src={heroPicture}
-        alt='Joel Borofsky elementary school photo'
-        imageBg='bg-vibrant-blue'
-        titleContainerBg='bg-orange'
-        title='Joel Borofsky'
+        image={{
+          src: heroPicture,
+          alt: 'Joel Borofsky elementary school photo',
+          wrapperClass: 'bg-blue',
+          imageClass: 'bg-green',
+        }}
+        title={{
+          text: 'Joel Borofsky',
+          containerBg: 'bg-orange',
+        }}
         note='a wee lad'
-        iconBg1='bg-vibrant-purple'
-        iconFill1='fill-vibrant-red'
-        icon1={icons.astronaut.path}
-        xmlns1={icons.astronaut.xmlns}
-        viewbox1={icons.astronaut.viewBox}
-        iconBg2='bg-yellow'
-        iconFill2='fill-vibrant-blue'
-        icon2={icons.sunflower.path}
-        xmlns2={icons.sunflower.xmlns}
-        viewBox2={icons.sunflower.viewBox}
+        icons={[
+          {
+            className: 'bg-vibrant-purple',
+            fill: 'fill-vibrant-red',
+            icon: icons.astronaut.path,
+            xmlns: icons.astronaut.xmlns,
+            viewBox: icons.astronaut.viewBox,
+          },
+          {
+            className: 'bg-yellow',
+            fill: 'fill-vibrant-blue',
+            icon: icons.sunflower.path,
+            xmlns: icons.sunflower.xmlns,
+            viewBox: icons.sunflower.viewBox,
+          },
+        ]}
+        className={` ${styles.imageContainer}`}
       />
     </div>
   )
