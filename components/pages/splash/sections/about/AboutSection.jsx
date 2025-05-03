@@ -86,43 +86,39 @@ export default function AboutSection() {
           Hello there!
           <br />
           <br />
-          I&apos;m Joel, a full-stack (as much as one can be) UI/UX developer
-          based in Kansas, USA, passionate about creating digital experiences
-          where a component isn&apos;t truly functional until it&apos;s
-          beautiful, accessible, and delightful.
+          I&apos;m Joel, a UI/UX developer based in Kansas who believes good
+          design should feel like kindness.
           <br />
           <br />
-          Before diving into the world wide web (of development and design), I
-          spent years in banking, finance, and business developmens across North
-          Carolina and New York, supporting startups and even launching my own
-          ventures. The unique blend of design, tech, and business acumen allows
-          me to deeply understand user needs, stakeholder expectations, and how
-          great UI/UX can drive meaningful business outcomes.
+          I build web apps that don&apos;t just function — they invite. My core
+          stack is Next.js + SCSS (but I&apos;m comfortable with Tailwind or
+          Styled Components too). Whether it&apos;s civic tools reaching
+          Congress or quirky ecommerce platforms for real-world clients, I bring
+          a design-first mindset to full-stack development.
           <br />
           <br />
-          My go-to stack of Next.js with SCSS and modern styling approaches is
-          chosen not just for effeciency, but for their ability to create
-          accessible and intuitive user interfaces. No matter the task, my goal
-          is the same: make the web work for everyone.
+          Once upon a time, I tried the banker bro life. Turns out I&apos;m too
+          empathetic for that — and too allergic to ego to thrive as a tech bro.
+          So now I&apos;m doing what actually fits: designing systems that scale
+          and interfaces that feel good to use. That business background still
+          shows up, though — in the way I think like a founder, ask the right
+          questions early, and collaborate with stakeholders like we&apos;re
+          building something that matters (and I hope we are!).
           <br />
           <br />
-          Currently, I&apos;m seeking new opportutnities with forward-thinking
-          teams across Europe, or remotely within the US. For those who are
-          offering a hybrid or in-office situation, if you&apos;re located in a
-          vibrant, creative hub like New England, the Upper Midwest, or the
-          Pacific North West, feel free to reach out!
+          I&apos;m looking for remote-first roles (or hybrid work in creative
+          hubs like New England, the Upper Midwest, or the Pacific Northwest).
+          If you&apos;re building tools for the public good — not just
+          &quot;changing the world&quot; on a pitch deck — or if you care deeply
+          about accessible, joyful UI... let&apos;s talk.
           <br />
           <br />
-          If you&apos;re a recruiter or represent a company that values
-          creativity, accessibility, and thoughtful UI/UX design, let&apos;s
-          talk! I&apos;ve been told I&apos;m fun to work with, I mean, how many
-          UI/UX developers have a profile picture featuring themselves with a
-          falcon?
+          Falcon not included.
         </TextContainer>
       </div>
       <div className={styles.linkContainer}>
-      <InternalLinkBox href='/about/'>Learn more about me!</InternalLinkBox>
-      <ResumeCvButton className='bg-green' />
+        <InternalLinkBox href='/about/'>Learn more about me!</InternalLinkBox>
+        <ResumeCvButton className='bg-green' />
       </div>
     </FlexColContainer>
   )

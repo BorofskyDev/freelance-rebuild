@@ -1,16 +1,63 @@
 @use './breakpoints' as *;
+@use './borders' as *;
 
 @mixin colToRowContainer {
-    height: 50vh;
-    width: 100%;
-    
-    @include respond(tab) {
-        height: 100%;
-        margin: 0;
-    }
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    @include respond(laptop) {
-        height: 100vh;
-        width: 50%;
-    }
+  @include respond(tab) {
+    min-height: 80vh;
+  }
+
+  @include respond(laptop) {
+    min-height: 100vh;
+    width: 50%;
+  }
+}
+
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexColumnCenter {
+  @include flexColumn;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexRowCenter {
+  @include flexRow;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin containerSection {
+  @include borderBottom;
+
+  @include respond(laptop) {
+    @include borderRight;
+  }
+}
+
+@mixin containerTransition {
+  @include respond(laptop) {
+    border-top: none;
+    border-left: var(--border-200);
+  }
 }

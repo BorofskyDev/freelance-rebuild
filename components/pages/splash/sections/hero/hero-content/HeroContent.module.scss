@@ -1,6 +1,10 @@
-@use '../../../../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .heroContent {
+  @include colToRowContainer;
+  @include containerSection;
+  @include flexColumn;
+  @include gap(400);
   margin-top: 1em;
   padding: 4em 2em;
   border-bottom: var(--border-200);

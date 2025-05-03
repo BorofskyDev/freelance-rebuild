@@ -1,12 +1,11 @@
-@use '../../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .flexColRowContainer {
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
     border-top: var(--border-400);
     border-bottom: var(--border-400);
+    @include flexColumn;
 
     @include respond(laptop) {
         flex-direction: row;

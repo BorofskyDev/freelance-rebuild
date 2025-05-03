@@ -1,0 +1,17 @@
+@mixin gap($size) {
+  gap: var(--spacing-#{$size});
+}
+
+@mixin padding($size) {
+  padding: var(--spacing-#{$size});
+}
+
+@mixin paddingX($size) {
+  padding-left: var(--spacing-#{$size});
+  padding-right: var(--spacing-#{$size});
+}
+
+@mixin paddingY($size) {
+  padding-top: var(--spacing-#{$size});
+  padding-bottom: var(--spacing-#{$size});
+}

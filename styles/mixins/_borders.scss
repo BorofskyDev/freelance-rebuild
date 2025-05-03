@@ -1,0 +1,16 @@
+@use './breakpoints' as *;
+
+@mixin borderRight {
+  @include respond(laptop) {
+    border-right: var(--border-200);
+    border-bottom: none;
+  }
+}
+
+@mixin borderBottom {
+  border-bottom: var(--border-200);
+  
+  @include respond(laptop) {
+    border-bottom: none;
+  }
+}

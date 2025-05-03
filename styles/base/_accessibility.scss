@@ -46,3 +46,14 @@
 .skip-to-content:focus {
   transform: translateY(0);
 }
+
+:focus-visible {
+  outline: 0.25rem solid hsl(var(--color-blue));
+  outline-offset: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :focus-visible {
+    scroll-behavior: auto;
+  }
+}

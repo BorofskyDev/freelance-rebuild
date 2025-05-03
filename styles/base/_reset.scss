@@ -10,6 +10,21 @@ html {
   box-sizing: border-box;
   font-size: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 a,
@@ -52,8 +67,9 @@ h6 {
   overflow-wrap: break-word;
 }
 
-h1, h2 {
-    font-family: var(--font-title);
+h1,
+h2 {
+  font-family: var(--font-title);
 }
 
 body {
