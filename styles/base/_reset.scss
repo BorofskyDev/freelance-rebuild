@@ -21,6 +21,11 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+u {
+  display: inline;
+  text-decoration: underline;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

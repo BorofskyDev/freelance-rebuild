@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic'
 import 'highlight.js/styles/github.css' // Import Highlight.js styles
 import { useCallback, useRef } from 'react'
 import { toast } from 'react-toastify' // For toast notifications
-import TagSelector from '@/components/inputs/tag-selector/TagSelector' // Ensure correct path
+import TiptapEditor from '@/components/inputs/tiptap/TiptapEditor'
 
 const Editor = dynamic(
   () => import('@tinymce/tinymce-react').then((mod) => mod.Editor),
@@ -181,40 +181,15 @@ export default function CreatePostModal() {
           required
           error={errors.description}
           helperText='Provide a concise description of your post (up to 100 words).'
-           // Enforce 100-word limit
+          // Enforce 100-word limit
         />
 
-        {/* Tag Selector */}
-        <TagSelector
-          availableTags={availableTags}
-          loadingTags={loadingTags}
-          creatingTag={creatingTag}
-          createTag={createTag}
-          selectedTags={selectedTags}
-          setSelectedTags={setSelectedTags} // Correct prop
-          error={errors.tags}
-        />
-
-        {/* TinyMCE Rich Text Editor for Content */}
+        {/* Tiptap content editor */}
         <div className={styles.inputGroup}>
-          <label
-            htmlFor='content'
-            className={`border-1 bs-3 br-4 fw-bold bg-light fs-200 ${styles.label}`}
-          >
+          <label htmlFor='content' className={styles.label}>
             Post Content <span aria-hidden='true'>*</span>
           </label>
-          <Editor
-            apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY} // Correctly accessing the API key
-            value={content}
-            onEditorChange={(newContent) => handleContentChange(newContent)}
-            init={editorConfig}
-            className={`${styles.richText} ${
-              errors.content ? styles.errorInput : ''
-            }`}
-            aria-required='true'
-            aria-invalid={!!errors.content}
-            aria-describedby={errors.content ? 'content-error' : undefined}
-          />
+          <TiptapEditor content={content} onChange={handleContentChange} />
           {errors.content && (
             <span id='content-error' className={styles.error} role='alert'>
               {errors.content}

@@ -1,0 +1,24 @@
+@use '@/styles/mixins' as *;
+
+.toolbarButton {
+  padding: var(--spacing-200);
+  border: var(--border-200);
+  box-shadow: var(--box-shadow-200);
+  border-radius: var(--br-600);
+  background-color: hsl(var(--color-violet));
+  cursor: pointer;
+  @include transitionMain;
+
+  &:hover {
+    background-color: hsl(var(--color-orange));
+    box-shadow: var(--box-shadow-400);
+  }
+
+  &:focus-visible {
+  }
+
+  &.active {
+    background-color: hsl(var(--color-yellow));
+    box-shadow: none;
+  }
+}
