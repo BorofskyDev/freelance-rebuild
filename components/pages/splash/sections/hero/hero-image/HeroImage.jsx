@@ -20,7 +20,7 @@ export default function HeroImage() {
         note='a wee lad'
         icons={[
           {
-            className: 'bg-vibrant-purple',
+            className: 'bg-violet',
             fill: 'fill-vibrant-red',
             icon: icons.astronaut.path,
             xmlns: icons.astronaut.xmlns,

@@ -64,23 +64,33 @@ export default function AboutSection() {
       </div>
       <div className={styles.bioContainer}>
         <ImageContainer
-          className='bg-yellow'
-          src={aboutPicture}
-          alt='Joel Borofsky with a falcon on his shoulder'
-          imageBg='bg-vibrant-pink'
-          titleContainerBg='bg-violet'
-          title='Joel Borofsky'
+          image={{
+            src: aboutPicture,
+            alt: 'Joel Borofsky with a falcon on his shoulder',
+            wrapperClass: 'bg-yellow',
+            imageClass: 'bg-vibrant-red',
+          }}
+          title={{
+            text: 'Joel Borofsky',
+            containerBg: 'bg-green',
+          }}
           note='a bit older'
-          iconBg1='bg-blue'
-          iconFill1='fill-vibrant-blue'
-          icon1={icons.falcon.path}
-          xmlns1={icons.falcon.xmlns}
-          viewbox1={icons.falcon.viewBox}
-          iconBg2='bg-vibrant-blue'
-          iconFill2='fill-red'
-          icon2={icons.liberty.path}
-          xmlns2={icons.liberty.xmlns}
-          viewBox2={icons.liberty.viewBox}
+          icons={[
+            {
+              className: 'bg-vibrant-purple',
+              fill: 'fill-vibrant-green',
+              icon: icons.falcon.path,
+              xmlns: icons.falcon.xmlns,
+              viewBox: icons.falcon.viewBox,
+            },
+            {
+              className: 'bg-vibrant-blue',
+              fill: 'fill-orange',
+              icon: icons.liberty.path,
+              xmlns: icons.liberty.xmlns,
+              viewBox: icons.liberty.viewBox,
+            },
+          ]}
         />
         <TextContainer>
           Hello there!
