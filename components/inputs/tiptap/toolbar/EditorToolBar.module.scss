@@ -2,14 +2,12 @@
 
 .toolbar {
   position: relative;
-  align-self: center;
   width: 100%;
-  
   padding: var(--spacing-200) var(--spacing-400);
   border: var(--border-400);
   border-radius: var(--br-800);
   box-shadow: var(--box-shadow-300);
-  background-color: hsl(var(--color-red));
+  background-color: hsl(var(--color-pink));
   display: flex;
   gap: var(--spacing-200);
   align-items: center;
@@ -17,10 +15,10 @@
   flex-wrap: wrap;
 
   @include respond(desktop) {
-    position: absolute;
+    max-height: 40ch;
+    min-width: fit-content;
+    position: sticky;
   top: var(--spacing-400);
-  align-self: flex-start;
-  width: max-content;
   overflow: auto;
 
   }

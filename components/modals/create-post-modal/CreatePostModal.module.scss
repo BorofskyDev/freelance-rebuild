@@ -46,7 +46,7 @@
   }
 
   & .richText {
-    /* Customize the TinyMCE editor container */
+    margin: var(--spacing-600) auto;
     border: var(--border-400);
     height: 50rem;
     width: 100%;
@@ -76,6 +76,7 @@
   }
 
   & .submitButton {
+    margin: var(--spacing-800) auto;
     padding: 0.75em 1.5em;
     cursor: pointer;
     font-size: 1em;

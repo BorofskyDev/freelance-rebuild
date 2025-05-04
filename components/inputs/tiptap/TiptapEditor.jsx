@@ -19,7 +19,16 @@ export default function TiptapEditor({ content, onChange }) {
         name: 'underline',
       }),
       Heading.configure({ levels: [1, 2, 3, 4, 5, 6] }),
-      Link.configure({ openOnClick: true }),
+      Link.configure({
+        openOnClick: true,
+        autolink: true,
+        linkOnPaste: true,
+        HTMLAttributes: {
+          rel: 'noopener noreferrer',
+          target: '_blank',
+          class: 'editor-link',
+        },
+      }),
       Image.configure({ inline: false }),
     ],
     content,

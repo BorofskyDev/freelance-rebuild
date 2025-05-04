@@ -44,6 +44,29 @@ export default function TypographyButtons({ editor }) {
       >
         Blockquote
       </ToolbarButton>
+      <ToolbarButton
+        onClick={() => {
+          const previousUrl = editor.getAttributes('link').href
+          const url = window.prompt('URL', previousUrl || '')
+
+          if (url === null) return
+
+          if (url === '') {
+            editor.chain().focus().extendMarkRange('link').unsetLink().run()
+            return
+          }
+          editor
+            .chain()
+            .focus()
+            .extendMarkRange('link')
+            .setLink({ href: url })
+            .run()
+        }}
+        isActive={editor.isActive('link')}
+        ariaLabel='Link'
+      >
+        Link
+      </ToolbarButton>
     </>
   )
 }
