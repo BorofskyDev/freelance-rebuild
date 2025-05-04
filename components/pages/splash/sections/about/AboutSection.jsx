@@ -19,7 +19,7 @@ export default function AboutSection() {
           icon={icons.developer.path}
           viewBox={icons.developer.viewBox}
           xmlns={icons.developer.xmlns}
-          iconFill='fill-green'
+          fill='fill-green'
           iconClassName='bg-dark'
           headerText='Developer'
           headerClassName='bg-violet'
@@ -34,7 +34,7 @@ export default function AboutSection() {
           icon={icons.designer.path}
           viewBox={icons.designer.viewBox}
           xmlns={icons.designer.xmlns}
-          iconFill='fill-vibrant-blue'
+          fill='fill-vibrant-blue'
           iconClassName='bg-orange'
           headerText='Designer'
           headerClassName='bg-pink'
@@ -50,7 +50,7 @@ export default function AboutSection() {
           icon={icons.business.path}
           viewBox={icons.business.viewBox}
           xmlns={icons.business.xmlns}
-          iconFill='fill-vibrant-orange'
+          fill='fill-vibrant-orange'
           iconClassName='bg-vibrant-purple'
           headerText='Business'
           headerClassName='bg-yellow'

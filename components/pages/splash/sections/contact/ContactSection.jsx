@@ -9,6 +9,7 @@ import ContactLinkContainer from '@/components/containers/contact-containers/con
 import contactImage from '@/public/img/profile/joel-hat-cutout.png'
 import styles from './ContactSection.module.scss'
 import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
+
 export default function ContactSection() {
   return (
     <section className={`bg-violet ${styles.contactSection}`}>
@@ -25,29 +26,39 @@ export default function ContactSection() {
           />
         </LargeTitleContainer>
         <TextContainer>
-          I&apos;m open for consulting, freelance work, or partnerships. Feel free
-          to reach out!
+          I&apos;m open for consulting, freelance work, or partnerships. Feel
+          free to reach out!
         </TextContainer>
       </div>
       <div className={styles.containerTwo}>
         <ImageContainer
-          src={contactImage}
-          alt='Joel Borofsky'
-          className='bg-vibrant-blue'
-          imageBg='bg-vibrant-orange'
-          titleContainerBg='bg-vibrant-pink'
-          title='Joel Borofsky'
-          note='so slavic'
-          iconBg1='bg-vibrant-red'
-          iconFill1='fill-vibrant-blue'
-          icon1={icons.fireHeart.path}
-          xmlns1={icons.fireHeart.xmlns}
-          viewbox1={icons.fireHeart.viewBox}
-          iconBg2='bg-blue'
-          iconFill2='fill-vibrant-red'
-          icon2={icons.cuteCat.path}
-          xmlns2={icons.cuteCat.xmlns}
-          viewBox2={icons.cuteCat.viewBox}
+          image={{
+            src: contactImage,
+            alt: 'Joel Borofsky',
+            wrapperClass: 'bg-vibrant-blue',
+            imageClass: 'bg-pink',
+          }}
+          title={{
+            text: 'Joel Borofsky',
+            containerBg: 'bg-yellow',
+          }}
+          note='not a model'
+          icons={[
+            {
+              className: 'bg-blue',
+              fill: 'fill-vibrant-red',
+              icon: icons.fireHeart.path,
+              xmlns: icons.fireHeart.xmlns,
+              viewBox: icons.fireHeart.viewBox,
+            },
+            {
+              className: 'bg-green',
+              fill: 'fill-vibrant-purple',
+              icon: icons.cuteCat.path,
+              xmlns: icons.cuteCat.xmlns,
+              viewBox: icons.cuteCat.viewBox,
+            },
+          ]}
         />
         <ContactLinkContainer />
         <InternalLinkBox href='/contact'>Use my contact form!</InternalLinkBox>

@@ -7,7 +7,7 @@ export default function SmallServiceContainer({
   icon,
   viewBox,
   xmlns,
-  iconFill,
+  fill,
   iconClassName,
   headerText,
   headerClassName,
@@ -15,13 +15,15 @@ export default function SmallServiceContainer({
   children,
 }) {
   return (
-    <div className={`relative border-5 br-4 bs-6 ${styles.smallServiceContainer} ${className}`}>
+    <div
+      className={`relative border-5 br-4 bs-6 ${styles.smallServiceContainer} ${className}`}
+    >
       <SmallIcon
         icon={icon}
         viewBox={viewBox}
         xmlns={xmlns}
         position='left'
-        iconFill={iconFill}
+        fill={fill}
         className={iconClassName}
       />
       <MediumHeader className={headerClassName}>

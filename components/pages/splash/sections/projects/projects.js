@@ -29,7 +29,7 @@ export const projects = [
       alt: 'Our Health ROI project page',
     },
     links: {
-      blog: '/blog/our-health-roi-project',
+      blog: '/blog/from-simple-to-civic-what-happened-when-i-built-the-thing-anyway',
       liveSite: 'https://ourhealthroi.com/',
     },
     techStack: ['nextjs', 'sass', 'framerMotion'],
@@ -66,7 +66,7 @@ export const projects = [
     decorativeIcon: 'work',
     colorTheme: 'bg-vibrant-green',
   },
-  
+
   {
     id: 'criminal-rolls',
     title: 'Criminal Rolls',
@@ -75,14 +75,11 @@ export const projects = [
       alt: 'Criminal Rolls project page',
     },
     links: {
-      blog:
-        '/blog/criminal-rolls-project',
-      liveSite:
-        'https://criminal-rolls-website.vercel.app/',
+      blog: '/blog/criminal-rolls-project',
+      liveSite: 'https://criminal-rolls-website.vercel.app/',
     },
     techStack: ['nextjs', 'tailwind', 'firebase'],
     decorativeIcon: 'cinnamonRoll',
     colorTheme: 'bg-orange',
   },
-  
 ]
