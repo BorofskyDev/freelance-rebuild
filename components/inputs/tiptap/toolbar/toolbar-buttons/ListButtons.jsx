@@ -19,36 +19,9 @@ export default function ListButtons({ editor }) {
         isActive={editor.isActive('orderedList')}
         ariaLabel='Ordered List'
       >
-        Ordered List
+        Numbered List
       </ToolbarButton>
-      <ToolbarButton
-        onClick={() => editor.chain().focus().toggleTaskList().run()}
-        isActive={editor.isActive('taskList')}
-        ariaLabel='Task List'
-      >
-        Task List
-      </ToolbarButton>
-      <ToolbarButton
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        isActive={editor.isActive('codeBlock')}
-        ariaLabel='Code Block'
-      >
-        Code Block
-      </ToolbarButton>
-      <ToolbarButton
-        onClick={() => editor.chain().focus().toggleHorizontalRule().run()}
-        isActive={editor.isActive('horizontalRule')}
-        ariaLabel='Horizontal Rule'
-      >
-        Horizontal Rule
-      </ToolbarButton>
-      <ToolbarButton
-        onClick={() => editor.chain().focus().setHardBreak().run()}
-        isActive={editor.isActive('hardBreak')}
-        ariaLabel='Hard Break'
-      >
-        Hard Break
-      </ToolbarButton>
+
     </>
   )
 }

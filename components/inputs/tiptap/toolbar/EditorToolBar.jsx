@@ -30,7 +30,7 @@ export default function EditorToolbar({ editor }) {
       <TypographyButtons editor={editor} />
       <HeaderButtons editor={editor} />
       <ListButtons editor={editor} />
-      <AlignmentButtons editor={editor} />
+      {/* <AlignmentButtons editor={editor} /> */}
         <ImageButtons editor={editor} />
     </div>
   )
