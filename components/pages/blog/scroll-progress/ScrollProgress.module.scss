@@ -1,0 +1,23 @@
+@use '@/styles/mixins' as *;
+
+.progressBar {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  height: var(--fs-700);
+  width: calc(100% - 4rem);
+  margin-inline: 4rem;
+  border: var(--border-400);
+  background-color: hsl(var(--color-vibrant-blue));
+  transform-origin: 0%;
+  z-index: 999;
+
+
+
+@include respond(laptop) {
+      top: 6.7rem;
+    left: calc(50% - 45ch);
+    width: 90ch;
+    margin-inline: 0;
+  }
+}

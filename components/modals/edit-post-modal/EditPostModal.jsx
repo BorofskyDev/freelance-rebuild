@@ -5,22 +5,14 @@
 import { useEditPost } from '@/lib/hooks/blog/useEditPost'
 import { handleEditPostSubmit } from '@/lib/functions/blog/handleEditPostSubmit'
 import InputGroup from '@/components/inputs/input-group/InputGroup'
-import TagSelector from '@/components/inputs/tag-selector/TagSelector'
-import dynamic from 'next/dynamic'
+
 import 'highlight.js/styles/github.css' // Import Highlight.js styles
 import { useTags } from '@/lib/hooks/blog/useTags'
 import Image from 'next/image'
 import Modal from '@/components/modals/Modal' // Import your custom Modal component
 import styles from './EditPostModal.module.scss'
 import { uploadImage } from '@/lib/functions/blog/uploadImage' // Make sure this path is correct
-
-const Editor = dynamic(
-  () => import('@tinymce/tinymce-react').then((mod) => mod.Editor),
-  {
-    ssr: false,
-    loading: () => <p>Loading editor...</p>,
-  }
-)
+import TiptapEditor from '@/components/inputs/tiptap/TiptapEditor'
 
 export default function EditPostModal({ postId, onClose }) {
   console.log('EditPostModal Rendered with postId:', postId)
@@ -42,7 +34,6 @@ export default function EditPostModal({ postId, onClose }) {
     content,
     setContent,
     selectedTags,
-    setSelectedTags,
     published,
     setPublished,
     publishDate,
@@ -56,7 +47,7 @@ export default function EditPostModal({ postId, onClose }) {
     editorRef,
   } = useEditPost(postId, onClose)
 
-  const { availableTags, loadingTags, creatingTag, createTag } = useTags()
+  
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value)
@@ -101,56 +92,7 @@ export default function EditPostModal({ postId, onClose }) {
     }
   }
 
-  const editorConfig = {
-    height: 500,
-    menubar: false,
-    plugins:
-      'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-    toolbar:
-      'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code | image | help',
-    toolbar_mode: 'floating',
-    setup: (editor) => {
-      editorRef.current = editor
-      editor.on('init', () => {
-        editor.formatter.register('code-block', {
-          inline: false,
-          block: 'pre',
-          classes: 'hljs',
-        })
-      })
-    },
-    content_style: `
-      body {
-        direction: ltr; /* Enforce left-to-right */
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-      }
-      pre.hljs {
-        background: #f0f0f0;
-        padding: 1em;
-        border-radius: 5px;
-      }
-      code {
-        background-color: #f0f0f0;
-        padding: 2px 4px;
-        border-radius: 4px;
-      }
-    `,
-    automatic_uploads: true,
-    images_upload_handler: (blobInfo, progress) =>
-      new Promise(async (resolve, reject) => {
-        try {
-          console.log('Slug at upload time:', slug)
-          const file = blobInfo.blob()
-          const fileName = blobInfo.filename() || `image-${Date.now()}.jpg`
-          const url = await uploadImage(file, slug, fileName)
-          console.log('URL returned from uploadImage:', url)
-          resolve(url) // Return the URL directly, no callbacks
-        } catch (error) {
-          reject('Image upload failed.')
-        }
-      }),
-  }
+ 
 
   if (!post) {
     return (
@@ -251,15 +193,7 @@ export default function EditPostModal({ postId, onClose }) {
             helperText='Provide a concise description of your post (up to 100 words).'
           />
 
-          <TagSelector
-            availableTags={availableTags}
-            loadingTags={loadingTags}
-            creatingTag={creatingTag}
-            createTag={createTag}
-            selectedTags={selectedTags}
-            setSelectedTags={setSelectedTags}
-            error={errors.tags}
-          />
+         
 
           <div className={styles.inputGroup}>
             <label
@@ -268,18 +202,7 @@ export default function EditPostModal({ postId, onClose }) {
             >
               Post Content <span aria-hidden='true'>*</span>
             </label>
-            <Editor
-              apiKey={process.env.NEXT_PUBLIC_TINYMCE_API_KEY}
-              value={content}
-              onEditorChange={handleContentChange}
-              init={editorConfig}
-              className={`${styles.richText} ${
-                errors.content ? styles.errorInput : ''
-              }`}
-              aria-required='true'
-              aria-invalid={!!errors.content}
-              aria-describedby={errors.content ? 'content-error' : undefined}
-            />
+            <TiptapEditor content={content} onChange={handleContentChange} />
             {errors.content && (
               <span id='content-error' className={styles.error} role='alert'>
                 {errors.content}
