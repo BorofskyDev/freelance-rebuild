@@ -26,4 +26,35 @@
   --color-light: 216 71% 96%; // #EDF3FC
   --color-dark: 231 41% 3%; // #070708
   --color-black: 0 0% 0%; // #000000
+
+  --color-focus: 68 100% 65%; // #E7FF4D
+}
+
+[data-theme='dark'] {
+  /* Primary – darker, muted/neon variants */
+  --color-blue: 241 61% 20%;    // #151454
+  --color-red: 347 74% 14%;     // #400A15
+  --color-violet: 256 71% 18%;  //#1E0D4F
+  --color-yellow: 68 79% 11%;   // #2C3206
+  --color-green: 175 74% 10%;   //#072B28
+  --color-pink: 303 69% 17%;    // #470D44
+  --color-orange: 18 49% 19%;   // #472718
+
+  /* Vibrant – tuned for neon contrast */
+  --color-vibrant-blue: 238 100% 71%;   // #6B71FF
+  --color-vibrant-red: 347 100% 65%;    // #FF4D73
+  --color-vibrant-purple: 256 100% 72%; // #9670FF
+  --color-vibrant-orange: 18 100% 65%;  // #FF824D
+  --color-vibrant-green: 175 100% 55%;  // #19FFEC
+  --color-vibrant-pink: 310 100% 66%;    // #FF4FE3
+
+  /* Link Text – must pass WCAG AA on dark backgrounds */
+  --color-link: 166 59% 78%;        // #A5E8D8
+  --color-link-hover: 166 90% 80%;  // #9DFAE4
+  --color-link-active: 180 69% 94%; // #E3FAFA
+
+  /* Neutral */
+  --color-light: 223 0% 8%; // #141414
+  --color-dark: 234 4% 89%; // #E1E1E3 
+  --color-black: 0 0% 0%; // unchanged
 }

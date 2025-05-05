@@ -5,6 +5,7 @@ import Footer from '@/components/layout/footer/Footer'
 import { AuthProvider } from '@/lib/hooks/auth/useAuth'
 import { playfairDisplay, inconsolata, inter, permanentMarker } from './fonts'
 import '@/styles/globals.scss'
+import { ThemeProvider } from 'next-themes'
 
 export const metadata = {
   title: 'Joel Borofsky | Designer & Developer',
@@ -43,15 +44,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body
         className={`${playfairDisplay.variable} ${inconsolata.variable} ${inter.variable} ${permanentMarker.variable}`}
       >
-        <AuthProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AuthProvider>
+        <ThemeProvider
+          attribute='data-theme'
+          defaultTheme='system'
+          enableSystem={true}
+        >
+          <AuthProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

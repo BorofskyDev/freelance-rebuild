@@ -1,0 +1,24 @@
+@use '@/styles/mixins' as *;
+
+.themeToggle {
+  position: relative;
+  padding: 0.5rem 1.25rem;
+  border: var(--border-200);
+  border-radius: var(--br-600);
+  background-color: hsl(var(--color-pink));
+  box-shadow: var(--box-shadow-200);
+  cursor: pointer;
+  @include transitionMain;
+
+  &:hover,
+  &:focus {
+    box-shadow: var(--box-shadow-400);
+  }
+
+  &:active {
+    box-shadow: var(--box-shadow-200);
+  }
+}
+
+
+

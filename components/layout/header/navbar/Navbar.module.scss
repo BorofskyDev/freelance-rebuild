@@ -23,15 +23,19 @@
   &__container {
     @include respond(laptop) {
       width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
     }
 
-    &:last-child {
-      @include respond(laptop) {
-        width: 100%;
-        display: grid;
-        place-items: center;
-      }
-    }
+    // &:last-child {
+    //   @include respond(laptop) {
+    //     width: 100%;
+    //     display: grid;
+    //     place-items: center;
+    //   }
+    // }
   }
 }
 

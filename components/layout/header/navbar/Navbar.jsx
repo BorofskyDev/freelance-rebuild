@@ -1,6 +1,7 @@
 import ResumeCvButton from '@/components/buttons/resume-cv-button/ResumeCvButton'
 import NavMenu from './nav-menu/NavMenu'
 import styles from './Navbar.module.scss'
+import ThemeToggle from '@/components/buttons/theme-toggle-button/ThemeToggleButton'
 
 function Navbar({ isSticky, navbarRef }) {
   return (
@@ -13,6 +14,7 @@ function Navbar({ isSticky, navbarRef }) {
       </div>
       <div className={styles.navbar__container}>
         <ResumeCvButton className='bg-blue' />
+        <ThemeToggle />
       </div>
     </nav>
   )
