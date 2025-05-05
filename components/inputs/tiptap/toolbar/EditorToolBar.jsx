@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import TypographyButtons from './toolbar-buttons/TypographyButtons'
 import HeaderButtons from './toolbar-buttons/HeaderButtons'
-import AlignmentButtons from './toolbar-buttons/AlignmentButtons'
 import ListButtons from './toolbar-buttons/ListButtons'
 import ImageButtons from './toolbar-buttons/ImageButtons'
 import styles from './EditorToolbar.module.scss'
@@ -30,7 +29,6 @@ export default function EditorToolbar({ editor }) {
       <TypographyButtons editor={editor} />
       <HeaderButtons editor={editor} />
       <ListButtons editor={editor} />
-      {/* <AlignmentButtons editor={editor} /> */}
         <ImageButtons editor={editor} />
     </div>
   )
