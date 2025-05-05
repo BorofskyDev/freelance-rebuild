@@ -80,6 +80,6 @@ export const projects = [
     },
     techStack: ['nextjs', 'tailwind', 'firebase'],
     decorativeIcon: 'cinnamonRoll',
-    colorTheme: 'bg-orange',
+    colorTheme: 'bg-vibrant-orange',
   },
 ]
