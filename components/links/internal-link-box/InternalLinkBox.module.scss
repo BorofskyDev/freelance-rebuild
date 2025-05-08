@@ -12,6 +12,7 @@
 
   &:hover,
   &:focus {
+    transform: scale(1.05);
     background-color: hsl(var(--color-link));
     color: hsl(var(--color-light));
     box-shadow: var(--box-shadow-400);

@@ -44,7 +44,7 @@ export const projects = [
       alt: 'RF project page',
     },
     links: {
-      blog: '/blog/rf-project',
+      blog: '/blog/designing-a-basic-portfolio-site',
       liveSite: 'https://rf-website.vercel.app/',
     },
     techStack: ['nextjs', 'sass', 'framerMotion'],

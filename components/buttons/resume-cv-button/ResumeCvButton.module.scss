@@ -10,6 +10,7 @@
   &:hover,
   &:focus {
     box-shadow: var(--box-shadow-400);
+    transform: scale(1.05);
   }
 
   &:active {

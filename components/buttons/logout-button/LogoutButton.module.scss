@@ -6,6 +6,7 @@
     @include transitionMain;
 
     &:hover, &:focus {
+        transform: scale(1.05);
         box-shadow: var(--box-shadow-400);
     }
 }

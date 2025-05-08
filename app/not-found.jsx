@@ -26,32 +26,43 @@ export default function NotFound() {
         <TextContainer>
           Some things were never meant to be seen, like this picture, or this
           page. I&apos;m not sure what happened here, but the link you&apos;ve
-          clicked on doesn&apos;t seem to exist or be working. I encourage you to
-          weep and mourn the loss of this page, but also to move on and go back
-          or go home (to my home page, not your home, for all I know that&apos;s
-          where you are...I hope you&apos;re having a good day!)
+          clicked on doesn&apos;t seem to exist or be working. I encourage you
+          to weep and mourn the loss of this page, but also to move on and go
+          back or go home (to my home page, not your home, for all I know
+          that&apos;s where you are...I hope you&apos;re having a good day!)
         </TextContainer>
         <InternalLinkBox href='/'>ET Go Home</InternalLinkBox>
       </div>
       <div className={styles.image}>
         <ImageContainer
-          className='bg-blue'
-          src={image}
-          alt='Joel Borofsky elementary school photo'
-          imageBg='bg-vibrant-red'
-          titleContainerBg='bg-violet'
-          title='Real life 404'
+          image={{
+            src: image,
+            alt: 'Joel Borofsky around 12 in bed curled up with a weird, erratic face',
+            wrapperClass: 'bg-red',
+            imageClass: 'bg-vibrant-purple',
+          }}
+          title={{
+            text: 'Joel Borofsky',
+            containerBg: 'bg-orange',
+          }}
           note='my god'
-          iconBg1='bg-dark'
-          iconFill1='fill-pink'
-          icon1={icons.lost.path}
-          xmlns1={icons.lost.xmlns}
-          viewbox1={icons.lost.viewBox}
-          iconBg2='bg-green'
-          iconFill2='fill-vibrant-purple'
-          icon2={icons.wtf.path}
-          xmlns2={icons.wtf.xmlns}
-          viewBox2={icons.wtf.viewBox}
+          icons={[
+            {
+              className: 'bg-dark',
+              fill: 'fill-pink',
+              icon: icons.lost.path,
+              xmlns: icons.lost.xmlns,
+              viewBox: icons.lost.viewBox,
+            }, 
+            {
+              className: 'bg-green',
+              fill: 'fill-vibrant-purple',
+              icon: icons.wtf.path,
+              xmlns: icons.wtf.xmlns,
+              viewBox: icons.wtf.viewBox,
+            }
+          ]}
+        
         />
       </div>
     </FlexColRowContainer>

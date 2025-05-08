@@ -13,6 +13,7 @@
   @include colToRowContainer;
 
   @include respond(laptop) {
+    margin-top: 0;
     border-right: var(--border-200);
     border-bottom: none;
   }
