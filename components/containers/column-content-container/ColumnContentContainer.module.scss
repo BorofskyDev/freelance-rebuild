@@ -1,5 +1,7 @@
 .content {
     max-width: 68ch;
     display: grid;
+    place-content: center;
+    place-items: center;
     gap: var(--spacing-200);
 }

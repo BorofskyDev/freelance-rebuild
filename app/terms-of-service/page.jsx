@@ -1,5 +1,4 @@
-
-import TermsPageComponent from '@/components/pages/terms-page-component/TermsPageComponent'
+import TermsPageComponent from '@/components/pages/terms/TermsPageComponent'
 
 export default function TermsPage() {
   return <TermsPageComponent />
