@@ -1,48 +1,44 @@
 // components/modals/Modal.jsx
 'use client'
 
-import { useEffect } from 'react'
+
+import { Dialog, DialogPanel } from '@headlessui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Modal.module.scss'
 
-export default function Modal({ isOpen, onClose, children, originRef, modalBg }) {
-  // Handle closing the modal when pressing the Escape key
-  useEffect(() => {
-    const handleEsc = (event) => {
-      if (event.key === 'Escape') {
-        onClose()
-      }
-    }
-    window.addEventListener('keydown', handleEsc)
-    return () => window.removeEventListener('keydown', handleEsc)
-  }, [onClose])
-
+export default function Modal({ isOpen, onClose, children, modalBg = '' }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          {/* Overlay */}
+        <Dialog
+          as='div'
+          open={isOpen}
+          onClose={onClose} /* ⬅ Esc + click-outside close */
+          className={styles.modalWrapper} /* add whatever wrapper styles */
+        >
+          {/* ─── Overlay ─────────────────────────────────── */}
           <motion.div
-            className={`${styles.modalOverlay}`}
-            onClick={onClose}
+            className={styles.modalOverlay} /* DO NOT change */
+            onClick={onClose} /* click-outside close */
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.5 }}
             exit={{ opacity: 0 }}
-          
+            transition={{ duration: 0.2 }}
           />
 
-          {/* Modal Content */}
-          <motion.div
+          {/* ─── Centered Panel ─────────────────────────── */}
+          <DialogPanel
+            as={motion.div} /* Headless UI + Framer Motion */
             className={`border-4 br-8 bs-4 ${modalBg} ${styles.modalContent}`}
-            initial={{ scale: 0, opacity: 0 }}
+            initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
             animate={{ scale: 1, opacity: 1, x: '-50%', y: '-50%' }}
-            exit={{ scale: 0, opacity: 0 }}
+            exit={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            
           >
-            {/* Close Button */}
+            {/* Close button */}
             <button
               onClick={onClose}
+              aria-label='Close Modal'
               style={{
                 position: 'absolute',
                 top: '1rem',
@@ -52,13 +48,13 @@ export default function Modal({ isOpen, onClose, children, originRef, modalBg })
                 fontSize: '1.5rem',
                 cursor: 'pointer',
               }}
-              aria-label='Close Modal'
             >
               &times;
             </button>
+
             {children}
-          </motion.div>
-        </>
+          </DialogPanel>
+        </Dialog>
       )}
     </AnimatePresence>
   )

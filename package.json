@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.0",
+    "@headlessui/react": "^2.2.2",
     "@heroicons/react": "^2.1.5",
     "@tinymce/tinymce-react": "^5.1.1",
     "@tiptap/extension-code-block-lowlight": "^2.11.9",

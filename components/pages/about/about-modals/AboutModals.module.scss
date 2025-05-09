@@ -1,0 +1,12 @@
+@use '@/styles/mixins' as *;
+
+.aboutModals {
+  margin: 0 auto;
+  min-width: fit-content;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-600);
+}

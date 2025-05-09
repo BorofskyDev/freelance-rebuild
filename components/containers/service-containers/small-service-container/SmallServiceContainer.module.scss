@@ -1,4 +1,4 @@
-@use '../../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .smallServiceContainer {
     width: 100%;
@@ -7,15 +7,15 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 2em;
-
+    
     @include respond(tab) {
         padding: 2em 3em;
     }
-
-    @include respond(desktop) {
+    
+    @include respond(laptop) {
+        width: clamp(18rem, 30vw, 26rem);
         margin: 0 auto;
-        max-width: 28rem;
-        min-height: 36rem;
+        height: 36rem;
         align-items: center;
         justify-content: center;
     }

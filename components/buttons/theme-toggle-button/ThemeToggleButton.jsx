@@ -24,7 +24,7 @@ export default function ThemeToggle({ className }) {
       onClick={toggleTheme}
       className={`${styles.themeToggle} ${className}`}
     >
-      {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+      {theme === 'dark' ? 'Lights On' : 'Lights Off'}
     </button>
   )
 }

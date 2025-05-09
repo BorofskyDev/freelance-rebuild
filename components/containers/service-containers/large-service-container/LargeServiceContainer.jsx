@@ -1,0 +1,38 @@
+import MediumHeader from '@/components/typography/headers/medium-header/Mediumheader'
+import SmallIcon from '@/components/icons/small-icon/SmallIcon'
+import styles from './LargeServiceContainer.module.scss'
+
+export default function LargeServiceContainer({
+  className,
+  icon,
+  viewBox,
+  xmlns,
+  fill,
+  iconClassName,
+  headerText,
+  headerClassName,
+  headerSpanText,
+  children,
+}) {
+  return (
+    <div
+      className={`relative border-5 br-4 bs-6 ${styles.largeServiceContainer} ${className}`}
+    >
+      <SmallIcon
+        icon={icon}
+        viewBox={viewBox}
+        xmlns={xmlns}
+        position='left'
+        fill={fill}
+        className={iconClassName}
+      />
+      <MediumHeader className={headerClassName}>
+        {headerText}
+        {headerSpanText && (
+          <span className='font-handwriting'>{headerSpanText}</span>
+        )}
+      </MediumHeader>
+      {children}
+    </div>
+  )
+}

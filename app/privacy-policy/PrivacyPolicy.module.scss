@@ -1,0 +1,15 @@
+.privacyPage {
+    width: 100%;
+    padding: var(--spacing-200) var(--spacing-400);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-600);
+
+    & .content {
+        max-width: 68ch;
+        display: grid;
+        gap: var(--spacing-200);
+    }
+}
