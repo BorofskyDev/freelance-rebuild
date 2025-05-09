@@ -129,7 +129,7 @@ export default function AboutPageComponent() {
             component-driven React, then Next.js, then accessible, user-first
             UIs. Today, I bake keyboard navigation, ARIA labels, and focus
             states into every build - because if someone can&apos;t click it or
-            see it, it doesn't work.
+            see it, it doesn&apos;t work.
             <br />
             <br />
             When not coding or designing, you&apos;ll find me world-building in
