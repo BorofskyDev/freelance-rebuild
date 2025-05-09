@@ -1,6 +1,5 @@
-import AccessibilityPageComponent from "@/components/pages/accessibility/AccessibilityComponent";
-
+import AccessibilityPageComponent from '@/components/pages/accessibility/AccessibilityComponent'
 
 export default function AccessibilityPage() {
-  return <AccessibilityPageComponent />;
+  return <AccessibilityPageComponent />
 }

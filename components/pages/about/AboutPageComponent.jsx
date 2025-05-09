@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import SectionHeader from '@/components/typography/headers/section-header/SectionHeader'
 import FlexColContainer from '@/components/containers/section-containers/flex-col-container/FlexColContainer'
 import SmallServiceContainer from '@/components/containers/service-containers/small-service-container/SmallServiceContainer'
 import ImageContainer from '@/components/containers/image-container/ImageContainer'
@@ -141,7 +140,7 @@ export default function AboutPageComponent() {
             <br />
             I want to join a quirky, UI/UX-first team where I can swear the
             small stuff and build features that make people pause, smile, and
-            say, 'Oh, nice button.'
+            say, &apos;Oh, nice button.&apos;
             
           </TextContainer>
         </div>

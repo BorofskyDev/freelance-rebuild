@@ -61,16 +61,16 @@ export default function TermsPage() {
         <MediumHeader className='bg-pink'>5. Termination</MediumHeader>
         <TextContainer>
           I may terminate or suspend access to the site immediately, without
-          prior notice, for any reason or no reason, including breach of these
+          prior notice, for any &quot;reason&quot; or no reason, including breach of these
           terms.
         </TextContainer>
 
         <MediumHeader className='bg-orange'>6. Disclaimer</MediumHeader>
         <TextContainer>
-          All content is provided "as is" without warranties of any kind. I
-          disclaim all representations and warranties, whether express or
-          implied, including accuracy, reliability, or fitness for a particular
-          purpose.
+          All content is provided &quot;as is&quot; without warranties of any
+          kind. I disclaim all representations and warranties, whether express
+          or implied, including accuracy, reliability, or fitness for a
+          particular purpose.
         </TextContainer>
 
         <MediumHeader className='bg-violet'>
@@ -92,11 +92,11 @@ export default function TermsPage() {
         <MediumHeader className='bg-green'>9. Changes to Terms</MediumHeader>
         <TextContainer>
           I may update these Terms from time to time. Any changes will be posted
-          here with a revised "Last updated" date. Please review periodically.
+          here with a revised &quot;Last updated&quot; date. Please review
+          periodically.
         </TextContainer>
-
       </ColumnContentContainer>
-        <InternalLinkBox href='/contact'>Contact Me</InternalLinkBox>
+      <InternalLinkBox href='/contact'>Contact Me</InternalLinkBox>
     </ColumnPageContainer>
   )
 }
