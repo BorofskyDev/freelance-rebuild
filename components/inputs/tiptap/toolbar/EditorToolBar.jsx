@@ -3,7 +3,7 @@ import TypographyButtons from './toolbar-buttons/TypographyButtons'
 import HeaderButtons from './toolbar-buttons/HeaderButtons'
 import ListButtons from './toolbar-buttons/ListButtons'
 import ImageButtons from './toolbar-buttons/ImageButtons'
-import styles from './EditorToolbar.module.scss'
+import styles from './EditorToolBar.module.css'
 
 export default function EditorToolbar({ editor }) {
     const [, setRefresh] = useState(0)
