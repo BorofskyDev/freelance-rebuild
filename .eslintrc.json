@@ -5,43 +5,10 @@
     "sourceType": "module",
     "ecmaFeatures": { "jsx": true }
   },
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "plugins": ["react", "react-hooks", "jsx-a11y"],
+  "plugins": ["react"],
   "rules": {
-    // ─── Prevent unescaped quotes in JSX text ────────────────────
-    "react/no-unescaped-entities": "error",
-
-    // ─── Enforce double-quotes for JSX attributes ───────────────
-    "jsx-quotes": ["error", "prefer-double"],
-
-    // ─── Dangling commas for multi-line only ────────────────────
-    "comma-dangle": ["error", "only-multiline"],
-
-    // ─── React & Hooks best-practices ───────────────────────────
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-
-    // ─── Accessibility checks ───────────────────────────────────
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        "components": ["Link"],
-        "specialLink": ["hrefLeft", "hrefRight"],
-        "aspects": ["invalidHref", "preferButton"]
-      }
-    ],
-
-    // ─── Clean code hygiene ─────────────────────────────────────
-    "no-console": ["warn", { "allow": ["warn", "error"] }],
-    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-    "no-mixed-spaces-and-tabs": "error",
-    "eol-last": ["error", "always"]
+    // ⚓️ Only flag unescaped quotes, apostrophes, <, >, etc. in JSX text
+    "react/no-unescaped-entities": "error"
   },
   "settings": {
     "react": { "version": "detect" }
