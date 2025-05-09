@@ -42,12 +42,7 @@ export default function Footer() {
           <li>
             <InternalLinkBox href='/about'>About</InternalLinkBox>
           </li>
-          <li>
-            <InternalLinkBox href='/projects'>Projects</InternalLinkBox>
-          </li>
-          <li>
-            <InternalLinkBox href='/blog'>Blog</InternalLinkBox>
-          </li>
+         
           <li>
             <InternalLinkBox href='/contact'>Contact</InternalLinkBox>
           </li>
