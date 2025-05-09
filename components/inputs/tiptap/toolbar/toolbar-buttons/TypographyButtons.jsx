@@ -10,14 +10,14 @@ export default function TypographyButtons({ editor }) {
         isActive={editor.isActive('bold')}
         ariaLabel='Bold'
       >
-        Bold
+        B
       </ToolbarButton>
       <ToolbarButton
         onClick={() => editor.chain().focus().toggleItalic().run()}
         isActive={editor.isActive('italic')}
         ariaLabel='Italic'
       >
-        Italic
+        I
       </ToolbarButton>
       <ToolbarButton
         onClick={() => {
@@ -28,21 +28,21 @@ export default function TypographyButtons({ editor }) {
         isActive={editor && editor.isActive('underline')}
         ariaLabel='Underline'
       >
-        Underline
+        U
       </ToolbarButton>
       <ToolbarButton
         onClick={() => editor.chain().focus().toggleStrike().run()}
         isActive={editor.isActive('strike')}
         ariaLabel='Strikethrough'
       >
-        Strikethrough
+        ST
       </ToolbarButton>
       <ToolbarButton
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
         isActive={editor.isActive('blockquote')}
         ariaLabel='Blockquote'
       >
-        Blockquote
+        BQ
       </ToolbarButton>
       <ToolbarButton
         onClick={() => {

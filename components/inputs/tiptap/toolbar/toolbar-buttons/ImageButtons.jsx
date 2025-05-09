@@ -27,7 +27,7 @@ export default function ImageButtons({editor}) {
             onClick={handleImageUpload}
             ariaLabel="Insert Image"
         >
-            Insert Image
+            Image
         </ToolbarButton>
     )
 }

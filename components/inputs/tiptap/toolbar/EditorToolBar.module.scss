@@ -1,7 +1,9 @@
 @use '@/styles/mixins' as *;
 
 .toolbar {
-  position: relative;
+  position: sticky;
+  top: -2rem;
+  left: 0;
   width: 100%;
   padding: var(--spacing-200) var(--spacing-400);
   border: var(--border-400);
@@ -13,6 +15,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  z-index: 10;
 
   @include respond(desktop) {
     max-height: 40ch;

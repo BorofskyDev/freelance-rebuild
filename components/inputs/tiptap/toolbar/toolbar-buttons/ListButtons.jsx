@@ -12,14 +12,14 @@ export default function ListButtons({ editor }) {
         isActive={editor.isActive('bulletList')}
         ariaLabel='Bullet List'
       >
-        Bullet List
+        * List
       </ToolbarButton>
       <ToolbarButton
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         isActive={editor.isActive('orderedList')}
         ariaLabel='Ordered List'
       >
-        Numbered List
+        # List
       </ToolbarButton>
 
     </>
