@@ -3,6 +3,7 @@ import rfProjectImg from '@/public/img/projects/rf.png'
 import nawaProjectImg from '@/public/img/projects/nawa.png'
 import criminalRollsProjectImg from '@/public/img/projects/criminal-rolls.png'
 import ourHealthRoiProjectImg from '@/public/img/projects/ourhealthroi.png'
+import escape from '@/public/img/projects/escape.png'
 
 
 export const projects = [
@@ -36,20 +37,36 @@ export const projects = [
     decorativeIcon: 'medical',
     colorTheme: 'bg-vibrant-red',
   },
+
   {
-    id: 'rf',
-    title: 'RF Profile Build',
+    id: 'criminal-rolls',
+    title: 'Criminal Rolls',
     image: {
-      src: rfProjectImg,
-      alt: 'RF project page',
+      src: criminalRollsProjectImg,
+      alt: 'Criminal Rolls project page',
     },
     links: {
-      blog: '/blog/designing-a-basic-portfolio-site',
-      liveSite: 'https://rf-website.vercel.app/',
+      blog: '/blog/criminal-rolls-project',
+      liveSite: 'https://criminal-rolls-website.vercel.app/',
     },
-    techStack: ['nextjs', 'sass', 'framerMotion'],
-    decorativeIcon: 'cool',
-    colorTheme: 'bg-vibrant-purple',
+    techStack: ['nextjs', 'tailwind', 'firebase'],
+    decorativeIcon: 'cinnamonRoll',
+    colorTheme: 'bg-vibrant-orange',
+  },
+  {
+    id: 'escape',
+    title: 'Escape From Eden',
+    image: {
+      src: escape,
+      alt: 'Escape from Eden project page',
+    },
+    links: {
+      blog: '/blog/tbd',
+      liveSite: 'https://escapefromeden.com/',
+    },
+    techStack: ['nextjs', 'tailwind', 'prisma'],
+    decorativeIcon: 'bittenApple',
+    colorTheme: 'bg-vibrant-pink',
   },
   {
     id: 'nawa',
@@ -66,20 +83,19 @@ export const projects = [
     decorativeIcon: 'work',
     colorTheme: 'bg-vibrant-green',
   },
-
   {
-    id: 'criminal-rolls',
-    title: 'Criminal Rolls',
+    id: 'rf',
+    title: 'RF Profile Build',
     image: {
-      src: criminalRollsProjectImg,
-      alt: 'Criminal Rolls project page',
+      src: rfProjectImg,
+      alt: 'RF project page',
     },
     links: {
-      blog: '/blog/criminal-rolls-project',
-      liveSite: 'https://criminal-rolls-website.vercel.app/',
+      blog: '/blog/designing-a-basic-portfolio-site',
+      liveSite: 'https://rf-website.vercel.app/',
     },
-    techStack: ['nextjs', 'tailwind', 'firebase'],
-    decorativeIcon: 'cinnamonRoll',
-    colorTheme: 'bg-vibrant-orange',
+    techStack: ['nextjs', 'sass', 'framerMotion'],
+    decorativeIcon: 'cool',
+    colorTheme: 'bg-vibrant-purple',
   },
 ]
