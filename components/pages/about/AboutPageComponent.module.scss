@@ -1,51 +1,20 @@
 @use '@/styles/mixins' as *;
 
 .aboutPageComponent {
-  height: 100%;
   padding-top: var(--spacing-900);
-  padding-bottom: var(--spacing-800);
-  gap: var(--spacing-900);
-
-  @include respond(laptop) {
-    gap: 0;
-  }
+  @include aboutBase;
 
   & .servicesWrapper {
-    height: 100%;
-    width: 100%;
     margin-top: var(--spacing-800);
-    padding: 2em 4em;
-    display: grid;
-    place-items: center;
-    gap: 4em;
-
-    @include respond(desktop) {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
+    @include aboutServices;
   }
 
   & .bioContainer {
-    height: 100%;
-    padding: 4em 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-400);
-
-    @include respond(laptop) {
-      flex-direction: row;
-    }
+    @include aboutBio;
   }
 
   .linkContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-800);
-    flex-wrap: wrap;
+    @include aboutLinks;
   }
 
   & .modalButton {
@@ -56,10 +25,11 @@
     cursor: pointer;
     @include transitionMain;
 
-    &:hover, &:focus {
-        transform: scale(1.05);
-        box-shadow: var(--box-shadow-400);
-        background-color: hsl(var(--color-blue));
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      box-shadow: var(--box-shadow-400);
+      background-color: hsl(var(--color-blue));
     }
   }
 }

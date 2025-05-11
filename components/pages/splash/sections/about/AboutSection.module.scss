@@ -1,50 +1,19 @@
-@use '../../../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .aboutSection {
-  height: 100%;
-  padding-bottom: var(--spacing-800);
   border-top: var(--border-400);
   border-bottom: var(--border-400);
-  gap: var(--spacing-900);
-
-  @include respond(laptop) {
-    gap: 0;
-  }
+  @include aboutBase;
 
   & .servicesWrapper {
-    height: 100%;
-    width: 100%;
-    padding: 2em 4em;
-    display: grid;
-    place-items: center;
-    gap: 4em;
-
-    @include respond(desktop) {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
+    @include aboutServices;
   }
 
   & .bioContainer {
-    height: 100%;
-    padding: 4em 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-400);
-
-    @include respond(laptop) {
-      flex-direction: row;
-    }
+    @include aboutBio;
   }
 
   .linkContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-800);
-    flex-wrap: wrap;
+    @include aboutLinks;
   }
 }
