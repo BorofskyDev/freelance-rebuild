@@ -17,7 +17,7 @@
     border-bottom: var(--border-600);
     border-top: var(--border-600);
     background-color: hsl(var(--color-light));
-    z-index: 9000 !important; // This is for the developer
+    z-index: 1000; // This is for the developer
     @include transitionMain;
   }
   &__container {

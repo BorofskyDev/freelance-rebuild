@@ -8,12 +8,12 @@ import DownloadButton from '../download-button/DownloadButton'
 export default function ResumeCvButton({ className = '' }) {
   const modalContent = (
     <div className={styles.modalBody}>
-      <SectionHeader className='bg-yellow'>Need a copy?</SectionHeader>
+      <SectionHeader className='bg-red'>Need a copy?</SectionHeader>
       <div className={styles.modalBody__linkContainer}>
         <DownloadButton
           path='/resume.pdf'
           title='Download Resume'
-          className='bg-orange'
+          className='bg-yellow'
         />
         <DownloadButton
           path='/cv.pdf'

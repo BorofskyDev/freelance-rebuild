@@ -8,8 +8,8 @@
   grid-template-columns: 3fr 1fr;
   border-bottom: var(--border-900);
   overflow: hidden;
+  z-index: 1000; // This is for the developer
   background-color: hsl(var(--color-light));
-  z-index: 999999;
 
   @include respond(laptop) {
     position: relative;

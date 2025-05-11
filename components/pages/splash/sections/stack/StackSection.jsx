@@ -100,9 +100,7 @@ export default function StackSection() {
           Accessibility
         </ExternalButtonLink>
 
-        <InternalLinkBox className={styles.exBtn} href='/stack'>
-          Learn more about my stack!
-        </InternalLinkBox>
+    
       </FourSquareBox>
     </FourSquareSectionContainer>
   )
