@@ -1,4 +1,4 @@
-'use client'
+
 
 import ModalButton from '@/components/buttons/modal-button/ModalButton'
 import styles from './ResumeCvButton.module.scss'
@@ -11,12 +11,12 @@ export default function ResumeCvButton({ className = '' }) {
       <SectionHeader className='bg-yellow'>Need a copy?</SectionHeader>
       <div className={styles.modalBody__linkContainer}>
         <DownloadButton
-          href='/resume.pdf'
+          path='/resume.pdf'
           title='Download Resume'
           className='bg-orange'
         />
         <DownloadButton
-          href='/cv.pdf'
+          path='/cv.pdf'
           title='Download CV'
           className='bg-green'
         />
