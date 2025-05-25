@@ -24,9 +24,9 @@
     @include respond(laptop) {
       width: 50%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      
+      gap: var(--spacing-800);
     }
 
     // &:last-child {

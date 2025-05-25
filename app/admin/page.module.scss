@@ -1,13 +1,16 @@
 @use '../../styles/mixins' as *;
 
 .adminPage {
-    height: 100%;
-    padding: 4em 4em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-400);
+  height: 100%;
+  padding: 4em 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-400);
+}
 
-    
+.linkContainer {
+    display: flex;
+    gap: var(--spacing-400);
 }

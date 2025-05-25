@@ -8,6 +8,7 @@ import { useAuth } from '@/lib/hooks/auth/useAuth' // Adjust the path if necessa
 import PageHeader from '@/components/typography/headers/page-header/PageHeader'
 import InternalLinkBox from '@/components/links/internal-link-box/InternalLinkBox'
 import styles from './layout.module.scss'
+import PageContainer from '@/components/containers/page-container/PageContainer'
 export default function AdminLayout({ children }) {
   const router = useRouter()
   const { isAdmin, loading } = useAuth()
@@ -36,12 +37,12 @@ export default function AdminLayout({ children }) {
   }
 
   return (
-    <div className={`bg-blue ${styles.layout}`}>
+    <PageContainer className={`bg-blue ${styles.layout}`}>
       <PageHeader>Admin Page!</PageHeader>
       <InternalLinkBox href='/admin'>Admin Dashboard</InternalLinkBox>
 
       {/* Optional: Add admin-specific layout components like a sidebar or header */}
       {children}
-    </div>
+    </PageContainer>
   )
 }
