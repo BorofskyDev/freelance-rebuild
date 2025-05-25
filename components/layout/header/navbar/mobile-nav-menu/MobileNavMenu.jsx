@@ -1,9 +1,10 @@
 'use client'
-import { useState } from 'react'
+
 import { motion } from 'framer-motion'
 import styles from './MobileNavMenu.module.scss'
 import NavMenu from '../nav-menu/NavMenu'
 import ResumeCvButton from '@/components/buttons/resume-cv-button/ResumeCvButton'
+import ThemeToggle from '@/components/buttons/theme-toggle-button/ThemeToggleButton'
 
 const menuVariants = {
   open: {
@@ -23,16 +24,11 @@ const menuVariants = {
 }
 
 export default function MobileNavMenu({ handleMenuToggle }) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleMenu = () => setIsOpen(!isOpen)
-
-  const closeMenu = () => setIsOpen(false)
-
   return (
     <motion.nav className={styles.mobileMenu} variants={menuVariants}>
       <NavMenu handleMenuToggle={handleMenuToggle} />
       <ResumeCvButton className='bg-blue' />
+      <ThemeToggle />
     </motion.nav>
   )
 }
