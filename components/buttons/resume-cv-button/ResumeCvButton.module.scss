@@ -7,6 +7,10 @@
   cursor: pointer;
   @include transitionMain;
 
+  &:focus-visible {
+    @include focused;
+  }
+
   &:hover,
   &:focus {
     box-shadow: var(--box-shadow-400);

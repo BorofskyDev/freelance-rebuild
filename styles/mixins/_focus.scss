@@ -1,0 +1,5 @@
+@mixin focused {
+    outline: 8px solid hsl(var(--color-focus));
+    outline-offset: 4px;
+  }
+  

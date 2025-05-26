@@ -15,4 +15,8 @@
     &:active {
         box-shadow: var(--box-shadow-200);
     }
+
+    &:focus-visible {
+        @include focused;
+    }
 }

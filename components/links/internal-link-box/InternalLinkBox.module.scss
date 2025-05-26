@@ -1,4 +1,4 @@
-@use '../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .internalLinkBox {
   min-width: fit-content;
@@ -16,5 +16,14 @@
     background-color: hsl(var(--color-link));
     color: hsl(var(--color-light));
     box-shadow: var(--box-shadow-400);
+  }
+
+  &:active {
+    box-shadow: var(--box-shadow-200);
+    transform: translate(0, 0);
+  }
+
+  &:focus-visible {
+    @include focused;
   }
 }

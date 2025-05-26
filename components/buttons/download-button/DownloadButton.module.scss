@@ -12,7 +12,10 @@
   font-weight: 700;
   cursor: pointer;
   @include transitionMain;
-
+  &:focus-visible {
+    @include focused;
+  }
+  
   &:hover,
   &:focus-visible {
     transform: scale(1.05);
