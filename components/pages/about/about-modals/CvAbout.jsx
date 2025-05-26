@@ -42,7 +42,7 @@ export function CVAbout() {
         icon={icons.dinosaur.path}
         viewBox={icons.dinosaur.viewBox}
         xmlns={icons.dinosaur.xmlns}
-        iconFill='fill-vibrant-blue'
+        fill='fill-vibrant-purple'
         iconClassName='bg-green'
         headerText='My CV'
         headerClassName='bg-yellow'

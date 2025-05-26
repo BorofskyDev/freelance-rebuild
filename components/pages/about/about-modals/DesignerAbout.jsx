@@ -42,7 +42,7 @@ export function DesignerAbout() {
         icon={icons.cat.path}
         viewBox={icons.cat.viewBox}
         xmlns={icons.cat.xmlns}
-        iconFill='fill-vibrant-blue'
+        fill='fill-vibrant-red'
         iconClassName='bg-blue'
         headerText='Design Process'
         headerClassName='bg-yellow'

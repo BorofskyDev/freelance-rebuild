@@ -138,7 +138,7 @@ export default function AboutPageComponent() {
             paleo-history, history in general, and of course Star Wars lore.
             <br />
             <br />
-            I want to join a quirky, UI/UX-first team where I can swear the
+            I want to join a quirky, UI/UX-first team where I can <span className={styles.strikethrough}>swear at</span> sweat the
             small stuff and build features that make people pause, smile, and
             say, &apos;Oh, nice button.&apos;
             
