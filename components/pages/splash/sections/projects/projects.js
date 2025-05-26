@@ -21,6 +21,7 @@ export const projects = [
     techStack: ['nextjs', 'sass', 'framerMotion'],
     decorativeIcon: 'cat',
     colorTheme: 'bg-vibrant-blue',
+    
   },
   {
     id: 'health-roi',
