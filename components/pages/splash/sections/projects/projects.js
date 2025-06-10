@@ -21,7 +21,6 @@ export const projects = [
     techStack: ['nextjs', 'sass', 'framerMotion'],
     decorativeIcon: 'cat',
     colorTheme: 'bg-vibrant-blue',
-    
   },
   {
     id: 'health-roi',
@@ -62,7 +61,7 @@ export const projects = [
       alt: 'Escape from Eden project page',
     },
     links: {
-      blog: '/blog/tbd',
+      blog: '/blog/escape-from-neubrutalism',
       liveSite: 'https://escapefromeden.com/',
     },
     techStack: ['nextjs', 'tailwind', 'prisma'],
