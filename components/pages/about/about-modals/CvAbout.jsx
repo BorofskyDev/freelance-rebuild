@@ -89,13 +89,30 @@ export function CVAbout() {
         <br />
         <p className='border-2 br-5 bs-2'>
           To support my family, I worked retail roles through
-          2021–2024—including Market Team Trainer at Whole Foods and kitchen
+          2021–present—including Market Team Trainer at Whole Foods and kitchen
           designer at Lowe&apos;s—where I honed stakeholder empathy by
           translating client needs into floor plans and process improvements. My
           Lowe&apos;s experience, in particular, solidified my passion for
           structured, iterative design reviews: listening to feedback, iterating
           quickly, and delivering joyful, accessible solutions (accessibility
           matters in all design, web or kitchen!).
+        </p>
+        <br />
+        <br />
+        <p className='border-2 br-5 bs-2'>
+          While at Lowe&apos;s, my sales background has had a measurable impact.
+          Since my first month on the sales floor, my department, previously
+          bottom three in the store for sales-to-plan percentage, has
+          consistently ranked #1 or #2. It&apos;s currently on track to finish
+          Q2 2025 as the #1 department for the quarter, which would be a first
+          since the store opened over a decade ago.
+        </p>
+        <br />
+        <br />
+        <p className='border-2 br-5 bs-2'>
+          I consistently rank among the top 15 sales specialists in the region
+          and top 10 for countertop sales. Since joining the department, it has
+          never finished a month below 120% of goal.
         </p>
         <br />
         <br />
