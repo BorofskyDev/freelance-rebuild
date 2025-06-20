@@ -6,6 +6,7 @@ import { AuthProvider } from '@/lib/hooks/auth/useAuth'
 import { playfairDisplay, inconsolata, inter, permanentMarker } from './fonts'
 import '@/styles/globals.scss'
 import { ThemeProvider } from 'next-themes'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
   title: 'Joel Borofsky | Designer & Developer',
@@ -57,6 +58,8 @@ export default function RootLayout({ children }) {
             <Header />
             {children}
             <Footer />
+            <Analytics />
+          
           </AuthProvider>
         </ThemeProvider>
       </body>
