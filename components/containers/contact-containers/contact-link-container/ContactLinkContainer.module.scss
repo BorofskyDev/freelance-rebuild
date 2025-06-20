@@ -1,8 +1,18 @@
-@use '../../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .icon {
     bottom: 0;
     right: 0;
+
+    @include respond(tab){
+        bottom: -1em;
+        right: -1em;
+    }
+
+    @include respond(laptop) {
+        bottom: 0;
+        right: -2em;
+    }
 }
 
 .contactLinkContainer {

@@ -46,7 +46,7 @@ export const projects = [
       alt: 'Criminal Rolls project page',
     },
     links: {
-      blog: '/blog/criminal-rolls-project',
+      blog: '/blog/arresting-the-criminal-rolls-design',
       liveSite: 'https://criminal-rolls-website.vercel.app/',
     },
     techStack: ['nextjs', 'tailwind', 'firebase'],
@@ -68,21 +68,21 @@ export const projects = [
     decorativeIcon: 'bittenApple',
     colorTheme: 'bg-vibrant-pink',
   },
-  {
-    id: 'nawa',
-    title: 'Nawa - Not Another Work App',
-    image: {
-      src: nawaProjectImg,
-      alt: 'Nawa project page',
-    },
-    links: {
-      blog: '/blog/nawa-project',
-      liveSite: 'https://nawa-website.vercel.app/',
-    },
-    techStack: ['nextjs', 'sass', 'firebase'],
-    decorativeIcon: 'work',
-    colorTheme: 'bg-vibrant-green',
-  },
+  // {
+  //   id: 'nawa',
+  //   title: 'Nawa - Not Another Work App',
+  //   image: {
+  //     src: nawaProjectImg,
+  //     alt: 'Nawa project page',
+  //   },
+  //   links: {
+  //     blog: '/blog/nawa-project',
+  //     liveSite: 'https://nawa-website.vercel.app/',
+  //   },
+  //   techStack: ['nextjs', 'sass', 'firebase'],
+  //   decorativeIcon: 'work',
+  //   colorTheme: 'bg-vibrant-green',
+  // },
   {
     id: 'rf',
     title: 'RF Profile Build',

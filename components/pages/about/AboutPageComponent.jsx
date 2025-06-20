@@ -132,16 +132,23 @@ export default function AboutPageComponent() {
             see it, it doesn&apos;t work.
             <br />
             <br />
+            This empathy-first approach also finds its way into my sales
+            approach. I&apos;m not sure when it clicked for me, but I realized
+            that the key to good sales is good service. You can come up with all
+            the slick sales approaches you want, but at the end of the day the
+            client is looking for someone they can trust, and if you can
+            empathize with the client, the client can trust you.
+            <br />
+            <br />
             When not coding or designing, you&apos;ll find me world-building in
             Crusader Kings III, sketching some half-formed fiction that will
             eventually be abandoned, or diving into engineering history,
             paleo-history, history in general, and of course Star Wars lore.
             <br />
-            <br />
-            I want to join a quirky, UI/UX-first team where I can <span className={styles.strikethrough}>swear at</span> sweat the
+            <br />I want to join a quirky, UI/UX-first team where I can{' '}
+            <span className={styles.strikethrough}>swear at</span> sweat the
             small stuff and build features that make people pause, smile, and
             say, &apos;Oh, nice button.&apos;
-            
           </TextContainer>
         </div>
         <div className={styles.linkContainer}>

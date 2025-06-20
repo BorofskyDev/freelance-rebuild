@@ -97,7 +97,7 @@ export default function AboutSection() {
           <br />
           <br />
           I&apos;m Joel, a UI/UX developer based in Kansas who believes good
-          design should feel like kindness.
+          design should feel like kindness and good sales like customer service.
           <br />
           <br />
           I build web apps that don&apos;t just function — they invite. My core
@@ -107,20 +107,20 @@ export default function AboutSection() {
           a design-first mindset to full-stack development.
           <br />
           <br />
-          Once upon a time, I tried the banker bro life. Turns out I&apos;m too
-          empathetic for that — and too allergic to ego to thrive as a tech bro.
-          So now I&apos;m doing what actually fits: designing systems that scale
-          and interfaces that feel good to use. That business background still
-          shows up, though — in the way I think like a founder, ask the right
-          questions early, and collaborate with stakeholders like we&apos;re
-          building something that matters (and I hope we are!).
+          Before developing websites, I developed businesses. I have almost 20
+          years experience in sales, and recently have found success as a top
+          salesperson in a Fortune 100 company. That business background still
+          shows up as a developer — in the way I think like a founder, ask the
+          right questions early, and collaborate with stakeholders like
+          we&apos;re building something that matters (and I hope we are!).
           <br />
           <br />
           I&apos;m looking for remote-first roles (or hybrid work in creative
           hubs like New England, the Upper Midwest, or the Pacific Northwest).
           If you&apos;re building tools for the public good — not just
           &quot;changing the world&quot; on a pitch deck — or if you care deeply
-          about accessible, joyful UI... let&apos;s talk.
+          about accessible, joyful UI and need someone to work on those
+          projects, pitch those projets, or both... let&apos;s talk.
           <br />
           <br />
           Falcon not included.
