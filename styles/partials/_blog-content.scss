@@ -24,6 +24,8 @@
     font-style: italic;
     font-size: 1rem;
     border-radius: var(--br-400);
+    display: grid;
+    gap: var(--spacing-200);
 
     p {
       margin: 0;

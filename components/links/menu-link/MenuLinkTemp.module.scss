@@ -1,4 +1,4 @@
-@use '../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .menuLink {
   position: relative;
@@ -10,6 +10,7 @@
   letter-spacing: var(--ls-sm);
   font-weight: var(--fw-medium-bold);
   color: hsl(var(--color-dark));
+  
 
   &::before {
     content: '';
@@ -63,6 +64,10 @@
 
   &:active::before {
     background-color: hsl(var(--color-link-active));
+  }
+
+  &:focus-visible { 
+    @include focused;
   }
 }
 

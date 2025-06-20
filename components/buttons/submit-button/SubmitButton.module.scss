@@ -12,6 +12,10 @@
     transform: scale(1.05);
   }
 
+  &:focus-visible {
+    @include focused;
+  }
+
   .submitButton:disabled {
     background-color: #ccc;
     cursor: not-allowed;

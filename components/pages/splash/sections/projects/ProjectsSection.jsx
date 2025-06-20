@@ -1,11 +1,5 @@
 import SectionHeader from '@/components/typography/headers/section-header/SectionHeader'
 import ProjectContainer from '@/components/containers/project-container/ProjectContainer'
-import { icons as ICONS } from '@/components/icons/icons'
-import rfProjectImg from '@/public/img/projects/rf.png'
-import nawaProjectImg from '@/public/img/projects/nawa.png'
-import momentsToMemoriesProjectImg from '@/public/img/projects/moments-to-memories.png'
-import criminalRollsProjectImg from '@/public/img/projects/criminal-rolls.png'
-import escapeFromEdenImg from '@/public/img/projects/escape.png'
 import styles from './ProjectsSection.module.scss'
 import { projects } from './projects'
 

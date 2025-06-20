@@ -43,7 +43,7 @@ export function DeveloperAbout() {
         icon={icons.liberty.path}
         viewBox={icons.liberty.viewBox}
         xmlns={icons.liberty.xmlns}
-        iconFill='fill-vibrant-blue'
+        fill='fill-vibrant-blue'
         iconClassName='bg-yellow'
         headerText='Development Process'
         headerClassName='bg-red'

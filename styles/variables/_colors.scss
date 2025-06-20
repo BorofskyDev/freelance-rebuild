@@ -27,7 +27,7 @@
   --color-dark: 231 41% 3%; // #070708
   --color-black: 0 0% 0%; // #000000
 
-  --color-focus: 68 100% 65%; // #E7FF4D
+  --color-focus: 68 34% 15%; // #E7FF4D
 }
 
 [data-theme='dark'] {
@@ -53,4 +53,6 @@
   --color-light: 223 0% 8%; // #141414
   --color-dark: 234 4% 89%; // #E1E1E3
   --color-black: 0 0% 0%; // unchanged
+
+  --color-focus: 68 100% 65%; // #E7FF4D
 }

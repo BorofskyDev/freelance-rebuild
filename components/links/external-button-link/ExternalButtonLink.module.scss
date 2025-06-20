@@ -1,4 +1,4 @@
-@use '../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .externalButtonLink {
     margin: var(--spacing-200);
@@ -29,5 +29,9 @@
     &:active {
         box-shadow: var(--box-shadow-200);
         transform: translate(0, 0);
+    }
+
+    &:focus-visible {
+        @include focused;
     }
 }

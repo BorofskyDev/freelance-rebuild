@@ -1,4 +1,4 @@
-@use '../../../../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .projectLink {
     padding: var(--spacing-100) var(--spacing-300);
@@ -20,6 +20,10 @@
         border: var(--border-200);
         border-color: hsl(var(--color-vibrant-blue));
         background-color: hsl(var(--color-light) / 0.6);
+    }
+
+    &:focus-visible {
+        @include focused;
     }
 
     & a {

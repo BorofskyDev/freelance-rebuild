@@ -1,4 +1,4 @@
-@use '../../../../../styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
 .contactSection {
     position: relative;
@@ -18,6 +18,8 @@
         gap: 0;
     }
 
+    
+
     & .containerOne, 
     & .containerTwo {
         display: flex;
@@ -33,8 +35,18 @@
         }
 
         & .icon {
-            top: 0;
+            bottom: 0;
             right: 0;
+        
+            @include respond(tab){
+                bottom: -1em;
+                right: -1em;
+            }
+        
+            @include respond(laptop) {
+                bottom: 0;
+                right: -2em;
+            }
         }
     }
 }
