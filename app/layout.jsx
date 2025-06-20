@@ -58,10 +58,9 @@ export default function RootLayout({ children }) {
             <Header />
             {children}
             <Footer />
-            <Analytics />
-          
           </AuthProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
