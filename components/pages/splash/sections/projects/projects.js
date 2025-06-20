@@ -92,7 +92,7 @@ export const projects = [
     },
     links: {
       blog: '/blog/designing-a-basic-portfolio-site',
-      liveSite: 'https://rf-website.vercel.app/',
+      liveSite: 'https://www.rebekahfowler.com/',
     },
     techStack: ['nextjs', 'sass', 'framerMotion'],
     decorativeIcon: 'cool',
